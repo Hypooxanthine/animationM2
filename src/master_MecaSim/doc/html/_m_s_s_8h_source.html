@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Animation 3D (master_meca_sim):  Fichier source de src-etudiant/MSS.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Animation 3D (master_meca_sim)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6a0b4331353b5e5054bef558e30b5fe0.html">src-etudiant</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">MSS.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_m_s_s_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * MSS.h : Systeme masses-resorts (base sur des maillages triangulaires)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Copyright (C) 2016 Florence Zara, LIRIS</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *               florence.zara@liris.univ-lyon1.fr</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *               http://liris.cnrs.fr/florence.zara/</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * This program is free software; you can redistribute it and/or modify</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * it under the terms of the GNU Lesser General Public License as published</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * by the Free Software Foundation; either version 2.1 of the License, or</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * (at your option) any later version.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * along with this program; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#ifndef MSS_H</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define MSS_H</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;vec.h&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="_noeuds_8h.html">Noeuds.h</a>&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">class </span><a class="code hl_class" href="class_particule.html">Particule</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="};">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_spring.html">   56</a></span><span class="keyword">class </span><a class="code hl_class" href="class_spring.html">Spring</a></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_spring.html#a751cea7f06b8e24a1f65c8d28cccde35">   61</a></span>    <a class="code hl_function" href="class_spring.html#a751cea7f06b8e24a1f65c8d28cccde35">Spring</a>() : <a class="code hl_variable" href="class_spring.html#ab4537c377cc67f8869848640b402c412">_Raideur</a>(0.0), <a class="code hl_variable" href="class_spring.html#a44c7ddbbbd522347869f4d5df8af7f2f">_Nu</a>(0.0), <a class="code hl_variable" href="class_spring.html#a4621cd5f882fbb1d30e8f77dc90f6bec">_L0</a>(0.0), <a class="code hl_variable" href="class_spring.html#a6d6fee4767604ac8ebbe77d3a1a4c562">_Amorti</a>(0.0) {}</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    </div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_spring.html#abcffa0f82c51f311b55a74c6cd33055a">   64</a></span>    <a class="code hl_function" href="class_spring.html#abcffa0f82c51f311b55a74c6cd33055a">Spring</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_spring.html">Spring</a> &amp; R) : </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_variable" href="class_spring.html#ab4537c377cc67f8869848640b402c412">_Raideur</a>(R.<a class="code hl_variable" href="class_spring.html#ab4537c377cc67f8869848640b402c412">_Raideur</a>), <a class="code hl_variable" href="class_spring.html#a44c7ddbbbd522347869f4d5df8af7f2f">_Nu</a>(R.<a class="code hl_variable" href="class_spring.html#a44c7ddbbbd522347869f4d5df8af7f2f">_Nu</a>), <a class="code hl_variable" href="class_spring.html#a4621cd5f882fbb1d30e8f77dc90f6bec">_L0</a>(R.<a class="code hl_variable" href="class_spring.html#a4621cd5f882fbb1d30e8f77dc90f6bec">_L0</a>), <a class="code hl_variable" href="class_spring.html#a6d6fee4767604ac8ebbe77d3a1a4c562">_Amorti</a>(R.<a class="code hl_variable" href="class_spring.html#a6d6fee4767604ac8ebbe77d3a1a4c562">_Amorti</a>) {}</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_spring.html#a5058cc681a464d24686343064b2edbc9">   68</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="class_spring.html">Spring</a> &amp;<a class="code hl_function" href="class_spring.html#a5058cc681a464d24686343064b2edbc9">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_spring.html">Spring</a> &amp; R)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_variable" href="class_spring.html#ab4537c377cc67f8869848640b402c412">_Raideur</a> = R.<a class="code hl_variable" href="class_spring.html#ab4537c377cc67f8869848640b402c412">_Raideur</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_variable" href="class_spring.html#a44c7ddbbbd522347869f4d5df8af7f2f">_Nu</a> = R.<a class="code hl_variable" href="class_spring.html#a44c7ddbbbd522347869f4d5df8af7f2f">_Nu</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_variable" href="class_spring.html#a4621cd5f882fbb1d30e8f77dc90f6bec">_L0</a> = R.<a class="code hl_variable" href="class_spring.html#a4621cd5f882fbb1d30e8f77dc90f6bec">_L0</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_variable" href="class_spring.html#a6d6fee4767604ac8ebbe77d3a1a4c562">_Amorti</a> = R.<a class="code hl_variable" href="class_spring.html#a6d6fee4767604ac8ebbe77d3a1a4c562">_Amorti</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>; </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    </div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_spring.html#a2f15ec73519c9e52cdbe35f446a65272">   79</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_spring.html#a2f15ec73519c9e52cdbe35f446a65272">SetFactAmorti</a>()</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_spring.html#ab4537c377cc67f8869848640b402c412">_Raideur</a> != 0)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <a class="code hl_variable" href="class_spring.html#a6d6fee4767604ac8ebbe77d3a1a4c562">_Amorti</a> = <a class="code hl_variable" href="class_spring.html#a44c7ddbbbd522347869f4d5df8af7f2f">_Nu</a> / <a class="code hl_variable" href="class_spring.html#ab4537c377cc67f8869848640b402c412">_Raideur</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <a class="code hl_variable" href="class_spring.html#a6d6fee4767604ac8ebbe77d3a1a4c562">_Amorti</a> = 1000;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="class_spring.html#ab4537c377cc67f8869848640b402c412">   91</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_spring.html#ab4537c377cc67f8869848640b402c412">_Raideur</a>;    </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_spring.html#a44c7ddbbbd522347869f4d5df8af7f2f">   94</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_spring.html#a44c7ddbbbd522347869f4d5df8af7f2f">_Nu</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="class_spring.html#a4621cd5f882fbb1d30e8f77dc90f6bec">   97</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_spring.html#a4621cd5f882fbb1d30e8f77dc90f6bec">_L0</a>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_spring.html#a6d6fee4767604ac8ebbe77d3a1a4c562">  100</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_spring.html#a6d6fee4767604ac8ebbe77d3a1a4c562">_Amorti</a>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>};</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="foldopen" id="foldopen00110" data-start="{" data-end="};">
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="class_ressort.html">  110</a></span><span class="keyword">class </span><a class="code hl_class" href="class_ressort.html">Ressort</a></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>{</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    </div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_ressort.html#a9ac5a63f76c0e6c431dbca3981ae3c3a">  115</a></span>    <span class="keyword">inline</span> <a class="code hl_function" href="class_ressort.html#a9ac5a63f76c0e6c431dbca3981ae3c3a">Ressort</a>() </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <a class="code hl_variable" href="class_ressort.html#a5f173746238a79603aa522aad6df26aa">_ParticuleA</a> = NULL; </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <a class="code hl_variable" href="class_ressort.html#a80b6be90cf84083c33077dfe769cb2bb">_ParticuleB</a> = NULL;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    </div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="class_ressort.html#ac57cce8e64e89f0e6aceab300b6e7bec">  122</a></span>    <a class="code hl_function" href="class_ressort.html#ac57cce8e64e89f0e6aceab300b6e7bec">Ressort</a>(<a class="code hl_class" href="class_particule.html">Particule</a> *p1, <a class="code hl_class" href="class_particule.html">Particule</a> *p2, <a class="code hl_class" href="class_spring.html">Spring</a> *R)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="comment">// Particules connectees par le ressort</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <a class="code hl_variable" href="class_ressort.html#a5f173746238a79603aa522aad6df26aa">_ParticuleA</a> = p1; </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <a class="code hl_variable" href="class_ressort.html#a80b6be90cf84083c33077dfe769cb2bb">_ParticuleB</a> = p2; </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="comment">// R : nu, raideur, amortissement</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <a class="code hl_variable" href="class_ressort.html#aa9b1b8b42e4a611a64bb8630e2171c26">_Spring</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_spring.html">Spring</a>(*R);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="comment">// Calcul de la longueur au repos du ressort</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <a class="code hl_function" href="class_ressort.html#a2d010534d83b44e74f6491f0b3e57b00">SetLrepos</a>();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    </div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="class_ressort.html#a99e2bf11a5bba12c579aabb7119c55a1">  137</a></span>    <a class="code hl_function" href="class_ressort.html#a99e2bf11a5bba12c579aabb7119c55a1">Ressort</a>(<a class="code hl_class" href="class_ressort.html">Ressort</a> &amp;R)</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <a class="code hl_variable" href="class_ressort.html#a5f173746238a79603aa522aad6df26aa">_ParticuleA</a> = R.<a class="code hl_function" href="class_ressort.html#a9134acf26f5f2ea8084ddc5811248bc8">GetParticuleA</a>();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <a class="code hl_variable" href="class_ressort.html#a80b6be90cf84083c33077dfe769cb2bb">_ParticuleB</a> = R.<a class="code hl_function" href="class_ressort.html#aedb32c98ae2799499621e82269c9f3a5">GetParticuleB</a>(); </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <a class="code hl_variable" href="class_ressort.html#aa9b1b8b42e4a611a64bb8630e2171c26">_Spring</a> = R.<a class="code hl_function" href="class_ressort.html#a550dfd75e8abecd418457ccaf4cb3c8c">GetSpring</a>();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    }</div>
+</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="class_ressort.html#a987f8d516bc4158631f1b13173b4081f">  145</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_ressort.html#a987f8d516bc4158631f1b13173b4081f">GetId</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_ressort.html#abfb379ba5253246beeecf020a00f0049">_Id</a>;}</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_ressort.html#a9134acf26f5f2ea8084ddc5811248bc8">  148</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="class_particule.html">Particule</a> * <a class="code hl_function" href="class_ressort.html#a9134acf26f5f2ea8084ddc5811248bc8">GetParticuleA</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_ressort.html#a5f173746238a79603aa522aad6df26aa">_ParticuleA</a>;}</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="class_ressort.html#aedb32c98ae2799499621e82269c9f3a5">  151</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="class_particule.html">Particule</a> * <a class="code hl_function" href="class_ressort.html#aedb32c98ae2799499621e82269c9f3a5">GetParticuleB</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_ressort.html#a80b6be90cf84083c33077dfe769cb2bb">_ParticuleB</a>;}</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="class_ressort.html#a550dfd75e8abecd418457ccaf4cb3c8c">  154</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="class_spring.html">Spring</a> * <a class="code hl_function" href="class_ressort.html#a550dfd75e8abecd418457ccaf4cb3c8c">GetSpring</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_ressort.html#aa9b1b8b42e4a611a64bb8630e2171c26">_Spring</a>;}</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="class_ressort.html#af3cea14f09ae852e0d8506db54c2bf6f">  157</a></span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_ressort.html#af3cea14f09ae852e0d8506db54c2bf6f">GetRaideur</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_ressort.html#aa9b1b8b42e4a611a64bb8630e2171c26">_Spring</a>-&gt;<a class="code hl_variable" href="class_spring.html#ab4537c377cc67f8869848640b402c412">_Raideur</a>;}</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="class_ressort.html#ad865f3eab4e7bda65e0fc22c86db33c9">  160</a></span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_ressort.html#ad865f3eab4e7bda65e0fc22c86db33c9">GetAmortissement</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_ressort.html#aa9b1b8b42e4a611a64bb8630e2171c26">_Spring</a>-&gt;<a class="code hl_variable" href="class_spring.html#a44c7ddbbbd522347869f4d5df8af7f2f">_Nu</a>;}</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="class_ressort.html#a202878361724604ca577d5e4a488df86">  163</a></span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_ressort.html#a202878361724604ca577d5e4a488df86">GetFactAmorti</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_ressort.html#aa9b1b8b42e4a611a64bb8630e2171c26">_Spring</a>-&gt;<a class="code hl_variable" href="class_spring.html#a6d6fee4767604ac8ebbe77d3a1a4c562">_Amorti</a>;}</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="class_ressort.html#abcd204e65449f88b2ef4b0f8abe61436">  166</a></span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_ressort.html#abcd204e65449f88b2ef4b0f8abe61436">GetLrepos</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_ressort.html#aa9b1b8b42e4a611a64bb8630e2171c26">_Spring</a>-&gt;<a class="code hl_variable" href="class_spring.html#a4621cd5f882fbb1d30e8f77dc90f6bec">_L0</a>;}</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="class_ressort.html#a2eae79317aba055e1dddc593f47aa01c">  169</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_ressort.html#a2eae79317aba055e1dddc593f47aa01c">SetId</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {<a class="code hl_variable" href="class_ressort.html#abfb379ba5253246beeecf020a00f0049">_Id</a> = id;}</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="class_ressort.html#ae37afc1148eedb4558b5b337e8fb1df5">  172</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_ressort.html#ae37afc1148eedb4558b5b337e8fb1df5">SetAmortiss</a>(<span class="keywordtype">float</span> nu) {<a class="code hl_variable" href="class_ressort.html#aa9b1b8b42e4a611a64bb8630e2171c26">_Spring</a>-&gt;<a class="code hl_variable" href="class_spring.html#a44c7ddbbbd522347869f4d5df8af7f2f">_Nu</a> = nu;}</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="class_ressort.html#abf6836991c424b7846120fa62bcb1a29">  175</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_ressort.html#abf6836991c424b7846120fa62bcb1a29">SetRaideur</a>(<span class="keywordtype">float</span> raideur) {<a class="code hl_variable" href="class_ressort.html#aa9b1b8b42e4a611a64bb8630e2171c26">_Spring</a>-&gt;<a class="code hl_variable" href="class_spring.html#ab4537c377cc67f8869848640b402c412">_Raideur</a> = raideur;}</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="class_ressort.html#a544e39bf66e93af28c7fe1cdabbc3c9d">  178</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_ressort.html#a544e39bf66e93af28c7fe1cdabbc3c9d">SetFactAmorti</a>() {<a class="code hl_variable" href="class_ressort.html#aa9b1b8b42e4a611a64bb8630e2171c26">_Spring</a>-&gt;<a class="code hl_function" href="class_spring.html#a2f15ec73519c9e52cdbe35f446a65272">SetFactAmorti</a>();}</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ressort.html#a2d010534d83b44e74f6491f0b3e57b00">SetLrepos</a>();</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="class_ressort.html#abfb379ba5253246beeecf020a00f0049">  187</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_ressort.html#abfb379ba5253246beeecf020a00f0049">_Id</a>; </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="class_ressort.html#a5f173746238a79603aa522aad6df26aa">  190</a></span>    <a class="code hl_class" href="class_particule.html">Particule</a> *<a class="code hl_variable" href="class_ressort.html#a5f173746238a79603aa522aad6df26aa">_ParticuleA</a>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="class_ressort.html#a80b6be90cf84083c33077dfe769cb2bb">  193</a></span>    <a class="code hl_class" href="class_particule.html">Particule</a> *<a class="code hl_variable" href="class_ressort.html#a80b6be90cf84083c33077dfe769cb2bb">_ParticuleB</a>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="class_ressort.html#aa9b1b8b42e4a611a64bb8630e2171c26">  196</a></span>    <a class="code hl_class" href="class_spring.html">Spring</a> *<a class="code hl_variable" href="class_ressort.html#aa9b1b8b42e4a611a64bb8630e2171c26">_Spring</a>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>};</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="foldopen" id="foldopen00206" data-start="{" data-end="};">
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="class_particule.html">  206</a></span><span class="keyword">class </span><a class="code hl_class" href="class_particule.html">Particule</a></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>{</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="class_particule.html#ae718305e66ec8d20d31c0febdea5ac7c">  211</a></span>    <span class="keyword">inline</span> <a class="code hl_function" href="class_particule.html#ae718305e66ec8d20d31c0febdea5ac7c">Particule</a>(<span class="keyword">const</span> Vector &amp;C) {<a class="code hl_variable" href="class_particule.html#a18c802aa39cb79e292b50cdde4fce947">_Id</a> = 0; <a class="code hl_variable" href="class_particule.html#abec40933927007a06388f2998e14822b">_Pos</a> = C;}</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="class_particule.html#ac19d3be1dc7c116c39afedfbe34f99a7">  214</a></span>    <a class="code hl_function" href="class_particule.html#ac19d3be1dc7c116c39afedfbe34f99a7">Particule</a>() {}</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    </div>
+<div class="foldopen" id="foldopen00217" data-start="{" data-end="}">
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="class_particule.html#ae5b8a39171c955efa0ea905e889c2d50">  217</a></span>    <a class="code hl_function" href="class_particule.html#ae5b8a39171c955efa0ea905e889c2d50">Particule</a>(<a class="code hl_class" href="class_particule.html">Particule</a> &amp;Part)</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    {</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <a class="code hl_variable" href="class_particule.html#a18c802aa39cb79e292b50cdde4fce947">_Id</a> = Part.<a class="code hl_function" href="class_particule.html#ae8b3e6d47337fa20487b92b74938f5c7">GetId</a>(); </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <a class="code hl_variable" href="class_particule.html#a7130772f6ef2d0b4efe699f16b410d6d">_RessortList</a> = Part.<a class="code hl_function" href="class_particule.html#a9bd17be2dca29070f1fb65356897f5c6">GetRessortList</a>(); </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <a class="code hl_variable" href="class_particule.html#abec40933927007a06388f2998e14822b">_Pos</a> = Part.<a class="code hl_function" href="class_particule.html#a7924239fe04a9c7676373e8502bcfd64">GetPosition</a>(); </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    }</div>
+</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="class_particule.html#ae8b3e6d47337fa20487b92b74938f5c7">  225</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_particule.html#ae8b3e6d47337fa20487b92b74938f5c7">GetId</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_particule.html#a18c802aa39cb79e292b50cdde4fce947">_Id</a>;}</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="class_particule.html#a9bd17be2dca29070f1fb65356897f5c6">  228</a></span>    <span class="keyword">inline</span> std::vector&lt;Ressort *&gt; &amp;<a class="code hl_function" href="class_particule.html#a9bd17be2dca29070f1fb65356897f5c6">GetRessortList</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_particule.html#a7130772f6ef2d0b4efe699f16b410d6d">_RessortList</a>;}</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="class_particule.html#a7924239fe04a9c7676373e8502bcfd64">  231</a></span>    <span class="keyword">inline</span> <span class="keyword">const</span> Vector&amp; <a class="code hl_function" href="class_particule.html#a7924239fe04a9c7676373e8502bcfd64">GetPosition</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="class_particule.html#abec40933927007a06388f2998e14822b">_Pos</a>;}</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="class_particule.html#a62957a430f3c4e492a71a9eea0a6e59c">  234</a></span>    <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_particule.html#a62957a430f3c4e492a71a9eea0a6e59c">GetMass</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="class_particule.html#a487539838348d387cd12edc4df3ac686">_Mass</a>;}</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="class_particule.html#ae4b7d584cb29dee2d0f2800c18cc4cf4">  237</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_particule.html#ae4b7d584cb29dee2d0f2800c18cc4cf4">GetNbVoisins</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_particule.html#a7130772f6ef2d0b4efe699f16b410d6d">_RessortList</a>.size();}</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="class_particule.html#a5ac334490a14b8e4cc14505d61c8d10e">  240</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_particule.html#a5ac334490a14b8e4cc14505d61c8d10e">SetId</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {<a class="code hl_variable" href="class_particule.html#a18c802aa39cb79e292b50cdde4fce947">_Id</a> = id;}</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="class_particule.html#a2b4708ce48728141d1e0db5ab63a5907">  243</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_particule.html#a2b4708ce48728141d1e0db5ab63a5907">SetPosition</a>(<span class="keyword">const</span> Vector &amp;C) {<a class="code hl_variable" href="class_particule.html#abec40933927007a06388f2998e14822b">_Pos</a> = C;}</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="class_particule.html#a5f8f54bd18b19ae380bfb37f02d2c98d">  246</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_particule.html#a5f8f54bd18b19ae380bfb37f02d2c98d">SetMass</a>(<span class="keywordtype">float</span> M) {<a class="code hl_variable" href="class_particule.html#a487539838348d387cd12edc4df3ac686">_Mass</a> = M;}</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="class_particule.html#abb4cc652701fd130ce90541a6ac427fa">  249</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_particule.html#abb4cc652701fd130ce90541a6ac427fa">AddRessort</a>(<a class="code hl_class" href="class_ressort.html">Ressort</a> *R) {<a class="code hl_variable" href="class_particule.html#a7130772f6ef2d0b4efe699f16b410d6d">_RessortList</a>.push_back(R);}</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="class_particule.html#a18c802aa39cb79e292b50cdde4fce947">  255</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_particule.html#a18c802aa39cb79e292b50cdde4fce947">_Id</a>;      </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="class_particule.html#a7130772f6ef2d0b4efe699f16b410d6d">  258</a></span>    std::vector&lt;Ressort *&gt; <a class="code hl_variable" href="class_particule.html#a7130772f6ef2d0b4efe699f16b410d6d">_RessortList</a>;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="class_particule.html#abec40933927007a06388f2998e14822b">  261</a></span>    Vector <a class="code hl_variable" href="class_particule.html#abec40933927007a06388f2998e14822b">_Pos</a>;</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="class_particule.html#a487539838348d387cd12edc4df3ac686">  264</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_particule.html#a487539838348d387cd12edc4df3ac686">_Mass</a>;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>};</div>
+</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="foldopen" id="foldopen00273" data-start="{" data-end="};">
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno"><a class="line" href="class_m_s_s.html">  273</a></span><span class="keyword">class </span><a class="code hl_class" href="class_m_s_s.html">MSS</a></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>{</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno"><a class="line" href="class_m_s_s.html#a5f781738c8fee530a636f1306ef76ab5">  278</a></span>    <span class="keyword">inline</span> <a class="code hl_function" href="class_m_s_s.html#a5f781738c8fee530a636f1306ef76ab5">MSS</a>() {};</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keyword">inline</span> <a class="code hl_function" href="class_m_s_s.html#adb46c8c73f733bab564206c5acd67a7d">~MSS</a>();</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno"><a class="line" href="class_m_s_s.html#ab3ae48f1f0340188119911ba539f956b">  289</a></span>    <span class="keyword">inline</span> <a class="code hl_class" href="class_particule.html">Particule</a>* <a class="code hl_function" href="class_m_s_s.html#ab3ae48f1f0340188119911ba539f956b">GetParticule</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_m_s_s.html#a0282602885336f77113d8b354c6cdad9">_ParticuleList</a>[id];}</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="class_m_s_s.html#aabe27eadcaa7a7a8f646d4f1f0bba0c3">  292</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_m_s_s.html#aabe27eadcaa7a7a8f646d4f1f0bba0c3">GetNbParticule</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="class_m_s_s.html#a0282602885336f77113d8b354c6cdad9">_ParticuleList</a>.size(); }</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="class_m_s_s.html#afd576a2a7c63cb622a3871c76a810005">  295</a></span>    <span class="keyword">inline</span> std::vector&lt;Particule *&gt; &amp;<a class="code hl_function" href="class_m_s_s.html#afd576a2a7c63cb622a3871c76a810005">GetPartList</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_m_s_s.html#a0282602885336f77113d8b354c6cdad9">_ParticuleList</a>;}</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno"><a class="line" href="class_m_s_s.html#af1d5593119db6582aa0cf5885f9202b5">  298</a></span>    <span class="keyword">inline</span> std::vector&lt;Ressort *&gt; &amp;<a class="code hl_function" href="class_m_s_s.html#af1d5593119db6582aa0cf5885f9202b5">GetRessortList</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_m_s_s.html#ab97fbceb43bda1c7db19dc6811b2e826">_RessortList</a>;}</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    </div>
+<div class="foldopen" id="foldopen00301" data-start="{" data-end="}">
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno"><a class="line" href="class_m_s_s.html#a80b32646abbc8fe2c622a619ad2130d5">  301</a></span>    <span class="keyword">inline</span> <span class="keyword">const</span> std::vector&lt;Particule *&gt; &amp;<a class="code hl_function" href="class_m_s_s.html#a80b32646abbc8fe2c622a619ad2130d5">GetPartListConst</a>()<span class="keyword"> const </span></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="keyword">    </span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="class_m_s_s.html#a0282602885336f77113d8b354c6cdad9">_ParticuleList</a>;}</div>
+</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    </div>
+<div class="foldopen" id="foldopen00305" data-start="{" data-end="}">
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno"><a class="line" href="class_m_s_s.html#a50d467ac3741a99d8af8ac118d9bd96f">  305</a></span>    <span class="keyword">inline</span> <span class="keyword">const</span> std::vector&lt;Ressort *&gt; &amp;<a class="code hl_function" href="class_m_s_s.html#a50d467ac3741a99d8af8ac118d9bd96f">GetRessortListConst</a>()<span class="keyword"> const </span></div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="keyword">    </span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="class_m_s_s.html#ab97fbceb43bda1c7db19dc6811b2e826">_RessortList</a>;}</div>
+</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno"><a class="line" href="class_m_s_s.html#a5b16da39fbff6fa3aededc7370aaf197">  309</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_m_s_s.html#a5b16da39fbff6fa3aededc7370aaf197">GetNbRessort</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="class_m_s_s.html#ab97fbceb43bda1c7db19dc6811b2e826">_RessortList</a>.size();}</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>            </div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    </div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno"><a class="line" href="class_m_s_s.html#a5ff197cf0d3ad7c3b8888629953e734a">  317</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_s_s.html#a5ff197cf0d3ad7c3b8888629953e734a">AddParticule</a>(<a class="code hl_class" href="class_particule.html">Particule</a> *P) {<a class="code hl_variable" href="class_m_s_s.html#a0282602885336f77113d8b354c6cdad9">_ParticuleList</a>.push_back(P);}</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    </div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno"><a class="line" href="class_m_s_s.html#a4bd3221e0ab5379906953476fb9271e0">  320</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_s_s.html#a4bd3221e0ab5379906953476fb9271e0">AddRessort</a>(<a class="code hl_class" href="class_ressort.html">Ressort</a> *R) {<a class="code hl_variable" href="class_m_s_s.html#ab97fbceb43bda1c7db19dc6811b2e826">_RessortList</a>.push_back(R);}</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_s_s.html#a31c24b79430886e4d3abf541ecf4757e">MakeFace</a>(<a class="code hl_class" href="class_particule.html">Particule</a> *p1, <a class="code hl_class" href="class_particule.html">Particule</a> *p2, <a class="code hl_class" href="class_particule.html">Particule</a> *p3, <a class="code hl_class" href="class_spring.html">Spring</a> *R);</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    </div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_m_s_s.html#af239d2fc7ec4b1fd41bb9bc6101cb4c5">MakeEdge</a>(<a class="code hl_class" href="class_particule.html">Particule</a> *p1, <a class="code hl_class" href="class_particule.html">Particule</a> *p2, <a class="code hl_class" href="class_spring.html">Spring</a> *R);</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    </div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    </div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno"><a class="line" href="class_m_s_s.html#a0282602885336f77113d8b354c6cdad9">  333</a></span>    std::vector&lt;Particule *&gt; <a class="code hl_variable" href="class_m_s_s.html#a0282602885336f77113d8b354c6cdad9">_ParticuleList</a>;</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno"><a class="line" href="class_m_s_s.html#ab97fbceb43bda1c7db19dc6811b2e826">  336</a></span>    std::vector&lt;Ressort *&gt; <a class="code hl_variable" href="class_m_s_s.html#ab97fbceb43bda1c7db19dc6811b2e826">_RessortList</a>;</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    </div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno"><a class="line" href="class_m_s_s.html#a15a8d047115df71adf8ccb248d5b8ca8">  339</a></span>    <a class="code hl_class" href="class_spring.html">Spring</a> <a class="code hl_variable" href="class_m_s_s.html#a15a8d047115df71adf8ccb248d5b8ca8">_RessOS</a>;</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    </div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>};</div>
+</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span> </div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
+<div class="foldopen" id="foldopen00348" data-start="{" data-end="}">
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno"><a class="line" href="class_m_s_s.html#adb46c8c73f733bab564206c5acd67a7d">  348</a></span><a class="code hl_function" href="class_m_s_s.html#adb46c8c73f733bab564206c5acd67a7d">MSS::~MSS</a>()</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>{</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    <span class="comment">// Destruction des particules du maillage</span></div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    <a class="code hl_variable" href="class_m_s_s.html#a0282602885336f77113d8b354c6cdad9">_ParticuleList</a>.~vector&lt;<a class="code hl_class" href="class_particule.html">Particule</a> *&gt;();</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    </div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    <span class="comment">// Destruction des ressorts du maillage</span></div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>    <a class="code hl_variable" href="class_m_s_s.html#ab97fbceb43bda1c7db19dc6811b2e826">_RessortList</a>.~vector&lt;<a class="code hl_class" href="class_ressort.html">Ressort</a> *&gt;();</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>}</div>
+</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_noeuds_8h_html"><div class="ttname"><a href="_noeuds_8h.html">Noeuds.h</a></div><div class="ttdoc">Definition des classes de noeuds du graphe de scene.</div></div>
+<div class="ttc" id="aclass_m_s_s_html"><div class="ttname"><a href="class_m_s_s.html">MSS</a></div><div class="ttdoc">Classe de base d un systeme masses-ressorts. Il est constitue d un ensemble de particules et de resso...</div><div class="ttdef"><b>Definition</b> MSS.h:274</div></div>
+<div class="ttc" id="aclass_m_s_s_html_a0282602885336f77113d8b354c6cdad9"><div class="ttname"><a href="class_m_s_s.html#a0282602885336f77113d8b354c6cdad9">MSS::_ParticuleList</a></div><div class="ttdeci">std::vector&lt; Particule * &gt; _ParticuleList</div><div class="ttdoc">Particules du maillage.</div><div class="ttdef"><b>Definition</b> MSS.h:333</div></div>
+<div class="ttc" id="aclass_m_s_s_html_a15a8d047115df71adf8ccb248d5b8ca8"><div class="ttname"><a href="class_m_s_s.html#a15a8d047115df71adf8ccb248d5b8ca8">MSS::_RessOS</a></div><div class="ttdeci">Spring _RessOS</div><div class="ttdoc">Caracteristiques des ressorts.</div><div class="ttdef"><b>Definition</b> MSS.h:339</div></div>
+<div class="ttc" id="aclass_m_s_s_html_a31c24b79430886e4d3abf541ecf4757e"><div class="ttname"><a href="class_m_s_s.html#a31c24b79430886e4d3abf541ecf4757e">MSS::MakeFace</a></div><div class="ttdeci">void MakeFace(Particule *p1, Particule *p2, Particule *p3, Spring *R)</div><div class="ttdef"><b>Definition</b> MSS.cpp:60</div></div>
+<div class="ttc" id="aclass_m_s_s_html_a4bd3221e0ab5379906953476fb9271e0"><div class="ttname"><a href="class_m_s_s.html#a4bd3221e0ab5379906953476fb9271e0">MSS::AddRessort</a></div><div class="ttdeci">void AddRessort(Ressort *R)</div><div class="ttdef"><b>Definition</b> MSS.h:320</div></div>
+<div class="ttc" id="aclass_m_s_s_html_a50d467ac3741a99d8af8ac118d9bd96f"><div class="ttname"><a href="class_m_s_s.html#a50d467ac3741a99d8af8ac118d9bd96f">MSS::GetRessortListConst</a></div><div class="ttdeci">const std::vector&lt; Ressort * &gt; &amp; GetRessortListConst() const</div><div class="ttdef"><b>Definition</b> MSS.h:305</div></div>
+<div class="ttc" id="aclass_m_s_s_html_a5b16da39fbff6fa3aededc7370aaf197"><div class="ttname"><a href="class_m_s_s.html#a5b16da39fbff6fa3aededc7370aaf197">MSS::GetNbRessort</a></div><div class="ttdeci">int GetNbRessort() const</div><div class="ttdef"><b>Definition</b> MSS.h:309</div></div>
+<div class="ttc" id="aclass_m_s_s_html_a5f781738c8fee530a636f1306ef76ab5"><div class="ttname"><a href="class_m_s_s.html#a5f781738c8fee530a636f1306ef76ab5">MSS::MSS</a></div><div class="ttdeci">MSS()</div><div class="ttdef"><b>Definition</b> MSS.h:278</div></div>
+<div class="ttc" id="aclass_m_s_s_html_a5ff197cf0d3ad7c3b8888629953e734a"><div class="ttname"><a href="class_m_s_s.html#a5ff197cf0d3ad7c3b8888629953e734a">MSS::AddParticule</a></div><div class="ttdeci">void AddParticule(Particule *P)</div><div class="ttdef"><b>Definition</b> MSS.h:317</div></div>
+<div class="ttc" id="aclass_m_s_s_html_a80b32646abbc8fe2c622a619ad2130d5"><div class="ttname"><a href="class_m_s_s.html#a80b32646abbc8fe2c622a619ad2130d5">MSS::GetPartListConst</a></div><div class="ttdeci">const std::vector&lt; Particule * &gt; &amp; GetPartListConst() const</div><div class="ttdef"><b>Definition</b> MSS.h:301</div></div>
+<div class="ttc" id="aclass_m_s_s_html_aabe27eadcaa7a7a8f646d4f1f0bba0c3"><div class="ttname"><a href="class_m_s_s.html#aabe27eadcaa7a7a8f646d4f1f0bba0c3">MSS::GetNbParticule</a></div><div class="ttdeci">int GetNbParticule() const</div><div class="ttdef"><b>Definition</b> MSS.h:292</div></div>
+<div class="ttc" id="aclass_m_s_s_html_ab3ae48f1f0340188119911ba539f956b"><div class="ttname"><a href="class_m_s_s.html#ab3ae48f1f0340188119911ba539f956b">MSS::GetParticule</a></div><div class="ttdeci">Particule * GetParticule(int id)</div><div class="ttdef"><b>Definition</b> MSS.h:289</div></div>
+<div class="ttc" id="aclass_m_s_s_html_ab97fbceb43bda1c7db19dc6811b2e826"><div class="ttname"><a href="class_m_s_s.html#ab97fbceb43bda1c7db19dc6811b2e826">MSS::_RessortList</a></div><div class="ttdeci">std::vector&lt; Ressort * &gt; _RessortList</div><div class="ttdoc">Ressorts du maillage.</div><div class="ttdef"><b>Definition</b> MSS.h:336</div></div>
+<div class="ttc" id="aclass_m_s_s_html_adb46c8c73f733bab564206c5acd67a7d"><div class="ttname"><a href="class_m_s_s.html#adb46c8c73f733bab564206c5acd67a7d">MSS::~MSS</a></div><div class="ttdeci">~MSS()</div><div class="ttdef"><b>Definition</b> MSS.h:348</div></div>
+<div class="ttc" id="aclass_m_s_s_html_af1d5593119db6582aa0cf5885f9202b5"><div class="ttname"><a href="class_m_s_s.html#af1d5593119db6582aa0cf5885f9202b5">MSS::GetRessortList</a></div><div class="ttdeci">std::vector&lt; Ressort * &gt; &amp; GetRessortList()</div><div class="ttdef"><b>Definition</b> MSS.h:298</div></div>
+<div class="ttc" id="aclass_m_s_s_html_af239d2fc7ec4b1fd41bb9bc6101cb4c5"><div class="ttname"><a href="class_m_s_s.html#af239d2fc7ec4b1fd41bb9bc6101cb4c5">MSS::MakeEdge</a></div><div class="ttdeci">void MakeEdge(Particule *p1, Particule *p2, Spring *R)</div><div class="ttdef"><b>Definition</b> MSS.cpp:77</div></div>
+<div class="ttc" id="aclass_m_s_s_html_afd576a2a7c63cb622a3871c76a810005"><div class="ttname"><a href="class_m_s_s.html#afd576a2a7c63cb622a3871c76a810005">MSS::GetPartList</a></div><div class="ttdeci">std::vector&lt; Particule * &gt; &amp; GetPartList()</div><div class="ttdef"><b>Definition</b> MSS.h:295</div></div>
+<div class="ttc" id="aclass_particule_html"><div class="ttname"><a href="class_particule.html">Particule</a></div><div class="ttdoc">Structure de donnees d une particule : reliee a un ensemble de ressorts et caracterisee par sa positi...</div><div class="ttdef"><b>Definition</b> MSS.h:207</div></div>
+<div class="ttc" id="aclass_particule_html_a18c802aa39cb79e292b50cdde4fce947"><div class="ttname"><a href="class_particule.html#a18c802aa39cb79e292b50cdde4fce947">Particule::_Id</a></div><div class="ttdeci">int _Id</div><div class="ttdoc">Identificateur</div><div class="ttdef"><b>Definition</b> MSS.h:255</div></div>
+<div class="ttc" id="aclass_particule_html_a2b4708ce48728141d1e0db5ab63a5907"><div class="ttname"><a href="class_particule.html#a2b4708ce48728141d1e0db5ab63a5907">Particule::SetPosition</a></div><div class="ttdeci">void SetPosition(const Vector &amp;C)</div><div class="ttdef"><b>Definition</b> MSS.h:243</div></div>
+<div class="ttc" id="aclass_particule_html_a487539838348d387cd12edc4df3ac686"><div class="ttname"><a href="class_particule.html#a487539838348d387cd12edc4df3ac686">Particule::_Mass</a></div><div class="ttdeci">float _Mass</div><div class="ttdoc">Masse de la particule.</div><div class="ttdef"><b>Definition</b> MSS.h:264</div></div>
+<div class="ttc" id="aclass_particule_html_a5ac334490a14b8e4cc14505d61c8d10e"><div class="ttname"><a href="class_particule.html#a5ac334490a14b8e4cc14505d61c8d10e">Particule::SetId</a></div><div class="ttdeci">void SetId(int id)</div><div class="ttdef"><b>Definition</b> MSS.h:240</div></div>
+<div class="ttc" id="aclass_particule_html_a5f8f54bd18b19ae380bfb37f02d2c98d"><div class="ttname"><a href="class_particule.html#a5f8f54bd18b19ae380bfb37f02d2c98d">Particule::SetMass</a></div><div class="ttdeci">void SetMass(float M)</div><div class="ttdef"><b>Definition</b> MSS.h:246</div></div>
+<div class="ttc" id="aclass_particule_html_a62957a430f3c4e492a71a9eea0a6e59c"><div class="ttname"><a href="class_particule.html#a62957a430f3c4e492a71a9eea0a6e59c">Particule::GetMass</a></div><div class="ttdeci">float GetMass() const</div><div class="ttdef"><b>Definition</b> MSS.h:234</div></div>
+<div class="ttc" id="aclass_particule_html_a7130772f6ef2d0b4efe699f16b410d6d"><div class="ttname"><a href="class_particule.html#a7130772f6ef2d0b4efe699f16b410d6d">Particule::_RessortList</a></div><div class="ttdeci">std::vector&lt; Ressort * &gt; _RessortList</div><div class="ttdoc">Ressorts relies a la particule.</div><div class="ttdef"><b>Definition</b> MSS.h:258</div></div>
+<div class="ttc" id="aclass_particule_html_a7924239fe04a9c7676373e8502bcfd64"><div class="ttname"><a href="class_particule.html#a7924239fe04a9c7676373e8502bcfd64">Particule::GetPosition</a></div><div class="ttdeci">const Vector &amp; GetPosition() const</div><div class="ttdef"><b>Definition</b> MSS.h:231</div></div>
+<div class="ttc" id="aclass_particule_html_a9bd17be2dca29070f1fb65356897f5c6"><div class="ttname"><a href="class_particule.html#a9bd17be2dca29070f1fb65356897f5c6">Particule::GetRessortList</a></div><div class="ttdeci">std::vector&lt; Ressort * &gt; &amp; GetRessortList()</div><div class="ttdef"><b>Definition</b> MSS.h:228</div></div>
+<div class="ttc" id="aclass_particule_html_abb4cc652701fd130ce90541a6ac427fa"><div class="ttname"><a href="class_particule.html#abb4cc652701fd130ce90541a6ac427fa">Particule::AddRessort</a></div><div class="ttdeci">void AddRessort(Ressort *R)</div><div class="ttdef"><b>Definition</b> MSS.h:249</div></div>
+<div class="ttc" id="aclass_particule_html_abec40933927007a06388f2998e14822b"><div class="ttname"><a href="class_particule.html#abec40933927007a06388f2998e14822b">Particule::_Pos</a></div><div class="ttdeci">Vector _Pos</div><div class="ttdoc">Position de la particule.</div><div class="ttdef"><b>Definition</b> MSS.h:261</div></div>
+<div class="ttc" id="aclass_particule_html_ac19d3be1dc7c116c39afedfbe34f99a7"><div class="ttname"><a href="class_particule.html#ac19d3be1dc7c116c39afedfbe34f99a7">Particule::Particule</a></div><div class="ttdeci">Particule()</div><div class="ttdef"><b>Definition</b> MSS.h:214</div></div>
+<div class="ttc" id="aclass_particule_html_ae4b7d584cb29dee2d0f2800c18cc4cf4"><div class="ttname"><a href="class_particule.html#ae4b7d584cb29dee2d0f2800c18cc4cf4">Particule::GetNbVoisins</a></div><div class="ttdeci">int GetNbVoisins()</div><div class="ttdef"><b>Definition</b> MSS.h:237</div></div>
+<div class="ttc" id="aclass_particule_html_ae5b8a39171c955efa0ea905e889c2d50"><div class="ttname"><a href="class_particule.html#ae5b8a39171c955efa0ea905e889c2d50">Particule::Particule</a></div><div class="ttdeci">Particule(Particule &amp;Part)</div><div class="ttdef"><b>Definition</b> MSS.h:217</div></div>
+<div class="ttc" id="aclass_particule_html_ae718305e66ec8d20d31c0febdea5ac7c"><div class="ttname"><a href="class_particule.html#ae718305e66ec8d20d31c0febdea5ac7c">Particule::Particule</a></div><div class="ttdeci">Particule(const Vector &amp;C)</div><div class="ttdef"><b>Definition</b> MSS.h:211</div></div>
+<div class="ttc" id="aclass_particule_html_ae8b3e6d47337fa20487b92b74938f5c7"><div class="ttname"><a href="class_particule.html#ae8b3e6d47337fa20487b92b74938f5c7">Particule::GetId</a></div><div class="ttdeci">int GetId()</div><div class="ttdef"><b>Definition</b> MSS.h:225</div></div>
+<div class="ttc" id="aclass_ressort_html"><div class="ttname"><a href="class_ressort.html">Ressort</a></div><div class="ttdoc">Structure de donnees d un ressort : constitue de deux particules a chacune de ses extremites,...</div><div class="ttdef"><b>Definition</b> MSS.h:111</div></div>
+<div class="ttc" id="aclass_ressort_html_a202878361724604ca577d5e4a488df86"><div class="ttname"><a href="class_ressort.html#a202878361724604ca577d5e4a488df86">Ressort::GetFactAmorti</a></div><div class="ttdeci">float GetFactAmorti()</div><div class="ttdef"><b>Definition</b> MSS.h:163</div></div>
+<div class="ttc" id="aclass_ressort_html_a2d010534d83b44e74f6491f0b3e57b00"><div class="ttname"><a href="class_ressort.html#a2d010534d83b44e74f6491f0b3e57b00">Ressort::SetLrepos</a></div><div class="ttdeci">void SetLrepos()</div><div class="ttdef"><b>Definition</b> MSS.cpp:48</div></div>
+<div class="ttc" id="aclass_ressort_html_a2eae79317aba055e1dddc593f47aa01c"><div class="ttname"><a href="class_ressort.html#a2eae79317aba055e1dddc593f47aa01c">Ressort::SetId</a></div><div class="ttdeci">void SetId(int id)</div><div class="ttdef"><b>Definition</b> MSS.h:169</div></div>
+<div class="ttc" id="aclass_ressort_html_a544e39bf66e93af28c7fe1cdabbc3c9d"><div class="ttname"><a href="class_ressort.html#a544e39bf66e93af28c7fe1cdabbc3c9d">Ressort::SetFactAmorti</a></div><div class="ttdeci">void SetFactAmorti()</div><div class="ttdef"><b>Definition</b> MSS.h:178</div></div>
+<div class="ttc" id="aclass_ressort_html_a550dfd75e8abecd418457ccaf4cb3c8c"><div class="ttname"><a href="class_ressort.html#a550dfd75e8abecd418457ccaf4cb3c8c">Ressort::GetSpring</a></div><div class="ttdeci">Spring * GetSpring()</div><div class="ttdef"><b>Definition</b> MSS.h:154</div></div>
+<div class="ttc" id="aclass_ressort_html_a5f173746238a79603aa522aad6df26aa"><div class="ttname"><a href="class_ressort.html#a5f173746238a79603aa522aad6df26aa">Ressort::_ParticuleA</a></div><div class="ttdeci">Particule * _ParticuleA</div><div class="ttdoc">Particule A du ressort.</div><div class="ttdef"><b>Definition</b> MSS.h:190</div></div>
+<div class="ttc" id="aclass_ressort_html_a80b6be90cf84083c33077dfe769cb2bb"><div class="ttname"><a href="class_ressort.html#a80b6be90cf84083c33077dfe769cb2bb">Ressort::_ParticuleB</a></div><div class="ttdeci">Particule * _ParticuleB</div><div class="ttdoc">Particule B du ressort</div><div class="ttdef"><b>Definition</b> MSS.h:193</div></div>
+<div class="ttc" id="aclass_ressort_html_a9134acf26f5f2ea8084ddc5811248bc8"><div class="ttname"><a href="class_ressort.html#a9134acf26f5f2ea8084ddc5811248bc8">Ressort::GetParticuleA</a></div><div class="ttdeci">Particule * GetParticuleA()</div><div class="ttdef"><b>Definition</b> MSS.h:148</div></div>
+<div class="ttc" id="aclass_ressort_html_a987f8d516bc4158631f1b13173b4081f"><div class="ttname"><a href="class_ressort.html#a987f8d516bc4158631f1b13173b4081f">Ressort::GetId</a></div><div class="ttdeci">int GetId()</div><div class="ttdef"><b>Definition</b> MSS.h:145</div></div>
+<div class="ttc" id="aclass_ressort_html_a99e2bf11a5bba12c579aabb7119c55a1"><div class="ttname"><a href="class_ressort.html#a99e2bf11a5bba12c579aabb7119c55a1">Ressort::Ressort</a></div><div class="ttdeci">Ressort(Ressort &amp;R)</div><div class="ttdef"><b>Definition</b> MSS.h:137</div></div>
+<div class="ttc" id="aclass_ressort_html_a9ac5a63f76c0e6c431dbca3981ae3c3a"><div class="ttname"><a href="class_ressort.html#a9ac5a63f76c0e6c431dbca3981ae3c3a">Ressort::Ressort</a></div><div class="ttdeci">Ressort()</div><div class="ttdef"><b>Definition</b> MSS.h:115</div></div>
+<div class="ttc" id="aclass_ressort_html_aa9b1b8b42e4a611a64bb8630e2171c26"><div class="ttname"><a href="class_ressort.html#aa9b1b8b42e4a611a64bb8630e2171c26">Ressort::_Spring</a></div><div class="ttdeci">Spring * _Spring</div><div class="ttdoc">Caracteristique du ressort (longueur au repos, raideur, nu, amortis.)</div><div class="ttdef"><b>Definition</b> MSS.h:196</div></div>
+<div class="ttc" id="aclass_ressort_html_abcd204e65449f88b2ef4b0f8abe61436"><div class="ttname"><a href="class_ressort.html#abcd204e65449f88b2ef4b0f8abe61436">Ressort::GetLrepos</a></div><div class="ttdeci">float GetLrepos()</div><div class="ttdef"><b>Definition</b> MSS.h:166</div></div>
+<div class="ttc" id="aclass_ressort_html_abf6836991c424b7846120fa62bcb1a29"><div class="ttname"><a href="class_ressort.html#abf6836991c424b7846120fa62bcb1a29">Ressort::SetRaideur</a></div><div class="ttdeci">void SetRaideur(float raideur)</div><div class="ttdef"><b>Definition</b> MSS.h:175</div></div>
+<div class="ttc" id="aclass_ressort_html_abfb379ba5253246beeecf020a00f0049"><div class="ttname"><a href="class_ressort.html#abfb379ba5253246beeecf020a00f0049">Ressort::_Id</a></div><div class="ttdeci">int _Id</div><div class="ttdoc">Identificateur.</div><div class="ttdef"><b>Definition</b> MSS.h:187</div></div>
+<div class="ttc" id="aclass_ressort_html_ac57cce8e64e89f0e6aceab300b6e7bec"><div class="ttname"><a href="class_ressort.html#ac57cce8e64e89f0e6aceab300b6e7bec">Ressort::Ressort</a></div><div class="ttdeci">Ressort(Particule *p1, Particule *p2, Spring *R)</div><div class="ttdef"><b>Definition</b> MSS.h:122</div></div>
+<div class="ttc" id="aclass_ressort_html_ad865f3eab4e7bda65e0fc22c86db33c9"><div class="ttname"><a href="class_ressort.html#ad865f3eab4e7bda65e0fc22c86db33c9">Ressort::GetAmortissement</a></div><div class="ttdeci">float GetAmortissement()</div><div class="ttdef"><b>Definition</b> MSS.h:160</div></div>
+<div class="ttc" id="aclass_ressort_html_ae37afc1148eedb4558b5b337e8fb1df5"><div class="ttname"><a href="class_ressort.html#ae37afc1148eedb4558b5b337e8fb1df5">Ressort::SetAmortiss</a></div><div class="ttdeci">void SetAmortiss(float nu)</div><div class="ttdef"><b>Definition</b> MSS.h:172</div></div>
+<div class="ttc" id="aclass_ressort_html_aedb32c98ae2799499621e82269c9f3a5"><div class="ttname"><a href="class_ressort.html#aedb32c98ae2799499621e82269c9f3a5">Ressort::GetParticuleB</a></div><div class="ttdeci">Particule * GetParticuleB()</div><div class="ttdef"><b>Definition</b> MSS.h:151</div></div>
+<div class="ttc" id="aclass_ressort_html_af3cea14f09ae852e0d8506db54c2bf6f"><div class="ttname"><a href="class_ressort.html#af3cea14f09ae852e0d8506db54c2bf6f">Ressort::GetRaideur</a></div><div class="ttdeci">float GetRaideur()</div><div class="ttdef"><b>Definition</b> MSS.h:157</div></div>
+<div class="ttc" id="aclass_spring_html"><div class="ttname"><a href="class_spring.html">Spring</a></div><div class="ttdoc">Structure pour definir les caracteristiques physiques des ressorts : raideur, amortissement,...</div><div class="ttdef"><b>Definition</b> MSS.h:57</div></div>
+<div class="ttc" id="aclass_spring_html_a2f15ec73519c9e52cdbe35f446a65272"><div class="ttname"><a href="class_spring.html#a2f15ec73519c9e52cdbe35f446a65272">Spring::SetFactAmorti</a></div><div class="ttdeci">void SetFactAmorti()</div><div class="ttdef"><b>Definition</b> MSS.h:79</div></div>
+<div class="ttc" id="aclass_spring_html_a44c7ddbbbd522347869f4d5df8af7f2f"><div class="ttname"><a href="class_spring.html#a44c7ddbbbd522347869f4d5df8af7f2f">Spring::_Nu</a></div><div class="ttdeci">float _Nu</div><div class="ttdoc">Amortissement.</div><div class="ttdef"><b>Definition</b> MSS.h:94</div></div>
+<div class="ttc" id="aclass_spring_html_a4621cd5f882fbb1d30e8f77dc90f6bec"><div class="ttname"><a href="class_spring.html#a4621cd5f882fbb1d30e8f77dc90f6bec">Spring::_L0</a></div><div class="ttdeci">float _L0</div><div class="ttdoc">Longueur au repos.</div><div class="ttdef"><b>Definition</b> MSS.h:97</div></div>
+<div class="ttc" id="aclass_spring_html_a5058cc681a464d24686343064b2edbc9"><div class="ttname"><a href="class_spring.html#a5058cc681a464d24686343064b2edbc9">Spring::operator=</a></div><div class="ttdeci">Spring &amp; operator=(const Spring &amp;R)</div><div class="ttdef"><b>Definition</b> MSS.h:68</div></div>
+<div class="ttc" id="aclass_spring_html_a6d6fee4767604ac8ebbe77d3a1a4c562"><div class="ttname"><a href="class_spring.html#a6d6fee4767604ac8ebbe77d3a1a4c562">Spring::_Amorti</a></div><div class="ttdeci">float _Amorti</div><div class="ttdoc">Facteur d amortissement.</div><div class="ttdef"><b>Definition</b> MSS.h:100</div></div>
+<div class="ttc" id="aclass_spring_html_a751cea7f06b8e24a1f65c8d28cccde35"><div class="ttname"><a href="class_spring.html#a751cea7f06b8e24a1f65c8d28cccde35">Spring::Spring</a></div><div class="ttdeci">Spring()</div><div class="ttdef"><b>Definition</b> MSS.h:61</div></div>
+<div class="ttc" id="aclass_spring_html_ab4537c377cc67f8869848640b402c412"><div class="ttname"><a href="class_spring.html#ab4537c377cc67f8869848640b402c412">Spring::_Raideur</a></div><div class="ttdeci">float _Raideur</div><div class="ttdoc">Raideur.</div><div class="ttdef"><b>Definition</b> MSS.h:91</div></div>
+<div class="ttc" id="aclass_spring_html_abcffa0f82c51f311b55a74c6cd33055a"><div class="ttname"><a href="class_spring.html#abcffa0f82c51f311b55a74c6cd33055a">Spring::Spring</a></div><div class="ttdeci">Spring(const Spring &amp;R)</div><div class="ttdef"><b>Definition</b> MSS.h:64</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

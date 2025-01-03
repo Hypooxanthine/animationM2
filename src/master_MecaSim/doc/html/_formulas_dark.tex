@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{epsfig}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\color{white}
+\pagecolor{black}
+\usepackage{newunicodechar}
+  \makeatletter
+    \def\doxynewunicodechar#1#2{%
+    \@tempswafalse
+    \edef\nuc@tempa{\detokenize{#1}}%
+    \if\relax\nuc@tempa\relax
+      \nuc@emptyargerr
+    \else
+      \edef\@tempb{\expandafter\@car\nuc@tempa\@nil}%
+      \nuc@check
+      \if@tempswa
+        \@namedef{u8:\nuc@tempa}{#2}%
+      \fi
+    \fi
+  }
+  \makeatother
+  \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \doxynewunicodechar{²}{${}^{2}$}% Superscript two
+  \doxynewunicodechar{³}{${}^{3}$}% Superscript three
+
+\pagestyle{empty}
+\begin{document}
+$ \vec{f}_i(t) = \sum_{j\mid(i,j)\in   E}  \left[\vec{f}^{e}_{i,j}(t) + \vec{f}^{v}_{i,j}(t) \right] \: +  m_i \vec{g} +\:  \vec{f}_{externe}(t),$
+\pagebreak
+
+$
+  \left\{
+  \begin{array}{lcl}
+  \vec{f}^{e}_{i,j}(t) &=& k_{ij} \left(\|x_i(t) - x_j(t)\| - l_{ij}\right)\;  \vec{u}_{ij}(t),\\
+  \vec{f}^{v}_{i,j}(t) &=& {\nu}_{ij}  \left(v_i(t) -  v_j(t)\right) \; \vec{u}_{ij}(t) \; \vec{u}_{ij}(t),
+  \end{array}
+  \right.
+  $
+\pagebreak
+
+$k_{ij}$
+\pagebreak
+
+${\nu}_{ij}$
+\pagebreak
+
+$l_{ij}$
+\pagebreak
+
+$\vec{g}$
+\pagebreak
+
+$\vec{u}_{ij}(t)$
+\pagebreak
+
+$ \vec{u}_{ij}(t) = \frac{x_i(t) - x_j(t)}{\|x_i(t) - x_j(t)\|} $
+\pagebreak
+
+$ a_i = \frac{f_i}{m_i} $
+\pagebreak
+
+$a_i$
+\pagebreak
+
+$f_i $
+\pagebreak
+
+$m_i $
+\pagebreak
+
+$
+  \begin{array}{lr}
+  \left\{
+  \begin{array}{ccl}
+  v(t_0)   &=&   v_0\\
+  v(\frac{h}{2}) &=& v_0 + \frac{h}{2}v'_0\\
+  x(t_0) &=& x_0
+  \end{array}
+  \right., 
+  & 
+  \left\{
+  \begin{array}{ccl}
+  v(t+\frac{h}{2}) &=& v(t-\frac{h}{2}) + hv'(t) \\ 
+  x(t+h) &=& x(t) + hv(t+\frac{h}{2}) 
+  \end{array}
+  \right..
+  \end{array}
+  $
+\pagebreak
+
+$\vec{n} = \frac{\vec{AB} \wedge \vec{AC}}{\| \vec{AB} \wedge \vec{AC} \|}$
+\pagebreak
+
+$\vec{AB} = \left(
+  \begin{array}{c}
+  x_B - x_A\\
+  y_B - y_A \\
+  z_B - z_A
+  \end{array}
+  \right) $
+\pagebreak
+
+$ \|\vec{u}\| = \sqrt{x^2 + y^2 + z^2} $
+\pagebreak
+
+$ \vec{u} $
+\pagebreak
+
+\end{document}

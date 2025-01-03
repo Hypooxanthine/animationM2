@@ -1,0 +1,881 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Animation 3D (master_meca_sim): Référence de la classe SolveurImpl</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Animation 3D (master_meca_sim)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pub-attribs">Attributs publics</a> &#124;
+<a href="class_solveur_impl-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle"><div class="title">Référence de la classe SolveurImpl</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_solveur_impl_8h_source.html">SolveurImpl.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a17dfb1a67bda85533f242918e9be1d88" id="r_a17dfb1a67bda85533f242918e9be1d88"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a17dfb1a67bda85533f242918e9be1d88">SolveurImpl</a> ()</td></tr>
+<tr class="separator:a17dfb1a67bda85533f242918e9be1d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a618ef4e10281852f47eff960ee8464e8" id="r_a618ef4e10281852f47eff960ee8464e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a618ef4e10281852f47eff960ee8464e8">CalculAccel_ForceGravite</a> (Vector g, int nb_som, std::vector&lt; Vector &gt; &amp;A, std::vector&lt; Vector &gt; &amp;Force, std::vector&lt; float &gt; &amp;M)</td></tr>
+<tr class="separator:a618ef4e10281852f47eff960ee8464e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91139a2df0e07f3bc7f5b899adb31fa4" id="r_a91139a2df0e07f3bc7f5b899adb31fa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a91139a2df0e07f3bc7f5b899adb31fa4">Solve</a> (float visco, int nb_som, int Tps, std::vector&lt; Vector &gt; &amp;Force, std::vector&lt; Vector &gt; &amp;A, std::vector&lt; Vector &gt; &amp;V, std::vector&lt; Vector &gt; &amp;P, std::vector&lt; float &gt; &amp;M, Vector gravite, <a class="el" href="class_m_s_s.html">MSS</a> *_SystemeMasseRessort)</td></tr>
+<tr class="separator:a91139a2df0e07f3bc7f5b899adb31fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a956195b6c490960dbd2f89b03ae64f" id="r_a0a956195b6c490960dbd2f89b03ae64f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a0a956195b6c490960dbd2f89b03ae64f">CalculVitesse</a> (float visco, int nb_som, int Tps, std::vector&lt; Vector &gt; &amp;A, std::vector&lt; Vector &gt; &amp;V)</td></tr>
+<tr class="separator:a0a956195b6c490960dbd2f89b03ae64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5638ba2678a9791d0d55ff1c7c13fbfb" id="r_a5638ba2678a9791d0d55ff1c7c13fbfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a5638ba2678a9791d0d55ff1c7c13fbfb">CalculPosition</a> (int nb_som, std::vector&lt; Vector &gt; &amp;V, std::vector&lt; Vector &gt; &amp;P)</td></tr>
+<tr class="separator:a5638ba2678a9791d0d55ff1c7c13fbfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a666bb7e16e4427a035a8e942236e9877" id="r_a666bb7e16e4427a035a8e942236e9877"><td class="memItemLeft" align="right" valign="top"><a id="a666bb7e16e4427a035a8e942236e9877" name="a666bb7e16e4427a035a8e942236e9877"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Allocation_Structure</b> (int nb_som)</td></tr>
+<tr class="separator:a666bb7e16e4427a035a8e942236e9877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b7ec21740f15253262e5492b49966d6" id="r_a7b7ec21740f15253262e5492b49966d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a7b7ec21740f15253262e5492b49966d6">Init</a> (int nb_som, <a class="el" href="class_m_s_s.html">MSS</a> *_SystemeMasseRessort)</td></tr>
+<tr class="separator:a7b7ec21740f15253262e5492b49966d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae26714db3e630b80ceb6cfe84e4212a0" id="r_ae26714db3e630b80ceb6cfe84e4212a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#ae26714db3e630b80ceb6cfe84e4212a0">Remplissage_df_dx_dv</a> (int nb_som, <a class="el" href="class_m_s_s.html">MSS</a> *_SystemeMasseRessort, std::vector&lt; Vector &gt; &amp;P)</td></tr>
+<tr class="separator:ae26714db3e630b80ceb6cfe84e4212a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f7c16532cb801039954e1b689de5d8f" id="r_a8f7c16532cb801039954e1b689de5d8f"><td class="memItemLeft" align="right" valign="top"><a id="a8f7c16532cb801039954e1b689de5d8f" name="a8f7c16532cb801039954e1b689de5d8f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialisation</b> (int nb_som, std::vector&lt; Vector &gt; &amp;Force)</td></tr>
+<tr class="separator:a8f7c16532cb801039954e1b689de5d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710fa9e36d506aa35707c67834b65573" id="r_a710fa9e36d506aa35707c67834b65573"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a710fa9e36d506aa35707c67834b65573">Remplissage_Y</a> (int nb_som, std::vector&lt; Vector &gt; &amp;V, std::vector&lt; Vector &gt; &amp;Force, std::vector&lt; float &gt; &amp;M, Vector gravite, <a class="el" href="class_m_s_s.html">MSS</a> *_SystemeMasseRessort)</td></tr>
+<tr class="separator:a710fa9e36d506aa35707c67834b65573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc76236fb501bf15ed37b364cc7c005e" id="r_afc76236fb501bf15ed37b364cc7c005e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#afc76236fb501bf15ed37b364cc7c005e">Resolution</a> (int nb_som, std::vector&lt; float &gt; &amp;M, <a class="el" href="class_m_s_s.html">MSS</a> *_SystemeMasseRessort)</td></tr>
+<tr class="separator:afc76236fb501bf15ed37b364cc7c005e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4de3fbbba735738bb6328786458d2080" id="r_a4de3fbbba735738bb6328786458d2080"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a4de3fbbba735738bb6328786458d2080">CalculProdMatVect</a> (int nb_som, std::vector&lt; float &gt; &amp;M, <a class="el" href="class_m_s_s.html">MSS</a> *_SystemeMasseRessort)</td></tr>
+<tr class="separator:a4de3fbbba735738bb6328786458d2080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e72ea7a2364f6e47f54538cd62aaa1b" id="r_a2e72ea7a2364f6e47f54538cd62aaa1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a2e72ea7a2364f6e47f54538cd62aaa1b">CalculDirection</a> (int nb_som)</td></tr>
+<tr class="separator:a2e72ea7a2364f6e47f54538cd62aaa1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac39fb92ac319ad8970649234266469b2" id="r_ac39fb92ac319ad8970649234266469b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#ac39fb92ac319ad8970649234266469b2">CalculBeta</a> (int nb_som)</td></tr>
+<tr class="separator:ac39fb92ac319ad8970649234266469b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55af951947f250f6d9869f824f2cdf89" id="r_a55af951947f250f6d9869f824f2cdf89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a55af951947f250f6d9869f824f2cdf89">CalculSolution_Residu</a> (int nb_som)</td></tr>
+<tr class="separator:a55af951947f250f6d9869f824f2cdf89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b920423b37c009e068f65b0c73397f1" id="r_a7b920423b37c009e068f65b0c73397f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a7b920423b37c009e068f65b0c73397f1">CalculNorme</a> (int nb_som)</td></tr>
+<tr class="separator:a7b920423b37c009e068f65b0c73397f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Attributs publics</h2></td></tr>
+<tr class="memitem:a575903397cbb1513a705bdefc085bb95" id="r_a575903397cbb1513a705bdefc085bb95"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a575903397cbb1513a705bdefc085bb95">_Nb_Iter_VitImpl</a></td></tr>
+<tr class="memdesc:a575903397cbb1513a705bdefc085bb95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre d iterations pour le calcul des vitesses en implicite.  <br /></td></tr>
+<tr class="separator:a575903397cbb1513a705bdefc085bb95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e23a32fffb046ffa4a261deccf42ac0" id="r_a2e23a32fffb046ffa4a261deccf42ac0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a2e23a32fffb046ffa4a261deccf42ac0">Y</a></td></tr>
+<tr class="memdesc:a2e23a32fffb046ffa4a261deccf42ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration du vecteur Y du systeme HX = Y.  <br /></td></tr>
+<tr class="separator:a2e23a32fffb046ffa4a261deccf42ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35deb3fd80bc81fecf24f515ad982675" id="r_a35deb3fd80bc81fecf24f515ad982675"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a35deb3fd80bc81fecf24f515ad982675">X</a></td></tr>
+<tr class="memdesc:a35deb3fd80bc81fecf24f515ad982675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaration du vecteur X du systeme HX = Y.  <br /></td></tr>
+<tr class="separator:a35deb3fd80bc81fecf24f515ad982675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cf0ea9227cddd500fed6a5d68dd7762" id="r_a4cf0ea9227cddd500fed6a5d68dd7762"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a4cf0ea9227cddd500fed6a5d68dd7762">Df_Dx_diag</a></td></tr>
+<tr class="memdesc:a4cf0ea9227cddd500fed6a5d68dd7762"><td class="mdescLeft">&#160;</td><td class="mdescRight">elements diagonaux et hors diagonale  <br /></td></tr>
+<tr class="separator:a4cf0ea9227cddd500fed6a5d68dd7762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc311d831d57bb8145b473c9f52878d" id="r_a2cc311d831d57bb8145b473c9f52878d"><td class="memItemLeft" align="right" valign="top"><a id="a2cc311d831d57bb8145b473c9f52878d" name="a2cc311d831d57bb8145b473c9f52878d"></a>
+std::vector&lt; std::vector&lt; std::vector&lt; float &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Df_Dx</b></td></tr>
+<tr class="separator:a2cc311d831d57bb8145b473c9f52878d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a704975ac36610ab16b4e5da6d0aeabbc" id="r_a704975ac36610ab16b4e5da6d0aeabbc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; float &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a704975ac36610ab16b4e5da6d0aeabbc">Df_Dv_diag</a></td></tr>
+<tr class="separator:a704975ac36610ab16b4e5da6d0aeabbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab65438309fe0ca4c7b35b55ea0797293" id="r_ab65438309fe0ca4c7b35b55ea0797293"><td class="memItemLeft" align="right" valign="top"><a id="ab65438309fe0ca4c7b35b55ea0797293" name="ab65438309fe0ca4c7b35b55ea0797293"></a>
+std::vector&lt; std::vector&lt; std::vector&lt; float &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Df_Dv</b></td></tr>
+<tr class="separator:ab65438309fe0ca4c7b35b55ea0797293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7d38cb8031f50e0585653df7aa1ec6b" id="r_ac7d38cb8031f50e0585653df7aa1ec6b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#ac7d38cb8031f50e0585653df7aa1ec6b">PP</a></td></tr>
+<tr class="memdesc:ac7d38cb8031f50e0585653df7aa1ec6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vecteur PP de direction.  <br /></td></tr>
+<tr class="separator:ac7d38cb8031f50e0585653df7aa1ec6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca91c045f58ac41e90f27be1314c879" id="r_a1ca91c045f58ac41e90f27be1314c879"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a1ca91c045f58ac41e90f27be1314c879">W</a></td></tr>
+<tr class="separator:a1ca91c045f58ac41e90f27be1314c879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97030ca752f4d618afa5ca87d7f1fc08" id="r_a97030ca752f4d618afa5ca87d7f1fc08"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a97030ca752f4d618afa5ca87d7f1fc08">W1</a></td></tr>
+<tr class="memdesc:a97030ca752f4d618afa5ca87d7f1fc08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vecteur W1 = df/dv * PP.  <br /></td></tr>
+<tr class="separator:a97030ca752f4d618afa5ca87d7f1fc08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f6ffddd3fe038a756b93efe9ce4e116" id="r_a1f6ffddd3fe038a756b93efe9ce4e116"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a1f6ffddd3fe038a756b93efe9ce4e116">W2</a></td></tr>
+<tr class="memdesc:a1f6ffddd3fe038a756b93efe9ce4e116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vecteur W2 = df/dx * PP.  <br /></td></tr>
+<tr class="separator:a1f6ffddd3fe038a756b93efe9ce4e116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace8098a5a5244ebdc4871adfb664b392" id="r_ace8098a5a5244ebdc4871adfb664b392"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#ace8098a5a5244ebdc4871adfb664b392">R</a></td></tr>
+<tr class="memdesc:ace8098a5a5244ebdc4871adfb664b392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vecteur R de residu : R = Y - HX.  <br /></td></tr>
+<tr class="separator:ace8098a5a5244ebdc4871adfb664b392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0937ae99c248cdd71b53f545724faf5" id="r_aa0937ae99c248cdd71b53f545724faf5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#aa0937ae99c248cdd71b53f545724faf5">_beta</a></td></tr>
+<tr class="memdesc:aa0937ae99c248cdd71b53f545724faf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Facteur d erreur.  <br /></td></tr>
+<tr class="separator:aa0937ae99c248cdd71b53f545724faf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8de8930d5c37c31c5a8dc74c56e9a352" id="r_a8de8930d5c37c31c5a8dc74c56e9a352"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#a8de8930d5c37c31c5a8dc74c56e9a352">_alpha</a></td></tr>
+<tr class="memdesc:a8de8930d5c37c31c5a8dc74c56e9a352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Taille du pas du GC.  <br /></td></tr>
+<tr class="separator:a8de8930d5c37c31c5a8dc74c56e9a352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab67c06e8dc0522111ac357f1c70bde46" id="r_ab67c06e8dc0522111ac357f1c70bde46"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solveur_impl.html#ab67c06e8dc0522111ac357f1c70bde46">_delta_t</a></td></tr>
+<tr class="memdesc:ab67c06e8dc0522111ac357f1c70bde46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pas de temps.  <br /></td></tr>
+<tr class="separator:ab67c06e8dc0522111ac357f1c70bde46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Librairies de base </p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a id="a17dfb1a67bda85533f242918e9be1d88" name="a17dfb1a67bda85533f242918e9be1d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17dfb1a67bda85533f242918e9be1d88">&#9670;&#160;</a></span>SolveurImpl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SolveurImpl::SolveurImpl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructeur </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="a618ef4e10281852f47eff960ee8464e8" name="a618ef4e10281852f47eff960ee8464e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a618ef4e10281852f47eff960ee8464e8">&#9670;&#160;</a></span>CalculAccel_ForceGravite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolveurImpl::CalculAccel_ForceGravite </td>
+          <td>(</td>
+          <td class="paramtype">Vector&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_som</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Force</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>M</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calcul des accelerations (avec ajout de la gravite aux forces)</p>
+<p>Calcul de l acceleration des particules avec ajout de la gravite aux forces des particules et ajout de la force due au vent sur une des particules du maillage et reinitialisation des forces. </p>
+
+</div>
+</div>
+<a id="ac39fb92ac319ad8970649234266469b2" name="ac39fb92ac319ad8970649234266469b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac39fb92ac319ad8970649234266469b2">&#9670;&#160;</a></span>CalculBeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolveurImpl::CalculBeta </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_som</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calcul de _beta = PP^T W </p>
+
+</div>
+</div>
+<a id="a2e72ea7a2364f6e47f54538cd62aaa1b" name="a2e72ea7a2364f6e47f54538cd62aaa1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e72ea7a2364f6e47f54538cd62aaa1b">&#9670;&#160;</a></span>CalculDirection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolveurImpl::CalculDirection </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_som</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calcul de la direction PP = Y + (_alpha / _beta) * PP <br  />
+ </p>
+
+</div>
+</div>
+<a id="a7b920423b37c009e068f65b0c73397f1" name="a7b920423b37c009e068f65b0c73397f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b920423b37c009e068f65b0c73397f1">&#9670;&#160;</a></span>CalculNorme()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolveurImpl::CalculNorme </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_som</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calcul de _alpha = Y^T Y </p>
+
+</div>
+</div>
+<a id="a5638ba2678a9791d0d55ff1c7c13fbfb" name="a5638ba2678a9791d0d55ff1c7c13fbfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5638ba2678a9791d0d55ff1c7c13fbfb">&#9670;&#160;</a></span>CalculPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolveurImpl::CalculPosition </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_som</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>V</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>P</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calcul des positions </p>
+
+</div>
+</div>
+<a id="a4de3fbbba735738bb6328786458d2080" name="a4de3fbbba735738bb6328786458d2080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4de3fbbba735738bb6328786458d2080">&#9670;&#160;</a></span>CalculProdMatVect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolveurImpl::CalculProdMatVect </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_som</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>M</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_m_s_s.html">MSS</a> *&#160;</td>
+          <td class="paramname"><em>_SystemeMasseRessort</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calcul du produit matrice * vecteur : W = H * PP = (M - dt df/dv - dt^2 df/dx) * PP </p>
+
+</div>
+</div>
+<a id="a55af951947f250f6d9869f824f2cdf89" name="a55af951947f250f6d9869f824f2cdf89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55af951947f250f6d9869f824f2cdf89">&#9670;&#160;</a></span>CalculSolution_Residu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolveurImpl::CalculSolution_Residu </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_som</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calcul de la solution X = X + (_alpha / _beta) * PP et calcul du residu Y = Y - (_alpha / _beta) * W</p>
+<p>Calcul de la solution X = X + (_alpha / _beta) * PP et calcul du residu Y = Y - (_alpha / _beta) * W. </p>
+
+</div>
+</div>
+<a id="a0a956195b6c490960dbd2f89b03ae64f" name="a0a956195b6c490960dbd2f89b03ae64f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a956195b6c490960dbd2f89b03ae64f">&#9670;&#160;</a></span>CalculVitesse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolveurImpl::CalculVitesse </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>visco</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_som</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Tps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>V</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calcul des vitesses et reinitialisation des vecteurs forces, contribX, contribV, Y </p>
+
+</div>
+</div>
+<a id="a7b7ec21740f15253262e5492b49966d6" name="a7b7ec21740f15253262e5492b49966d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b7ec21740f15253262e5492b49966d6">&#9670;&#160;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolveurImpl::Init </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_som</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_m_s_s.html">MSS</a> *&#160;</td>
+          <td class="paramname"><em>_SystemeMasseRessort</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialisation des structures - X, Y, PP, W, W1, W2, Df_Dx, Df_Dx_diag, Df_Dv, Df_Dv_diag </p>
+<p>RessortList relies a la particule NumPart_i</p>
+<p>Nombre de ressorts relies a la particule NumPart_i</p>
+
+</div>
+</div>
+<a id="ae26714db3e630b80ceb6cfe84e4212a0" name="ae26714db3e630b80ceb6cfe84e4212a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae26714db3e630b80ceb6cfe84e4212a0">&#9670;&#160;</a></span>Remplissage_df_dx_dv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolveurImpl::Remplissage_df_dx_dv </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_som</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_m_s_s.html">MSS</a> *&#160;</td>
+          <td class="paramname"><em>_SystemeMasseRessort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>P</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Remplissage matrices df/dx et df/dv - Utilisation formulation Volino ou Baraff </p>
+
+</div>
+</div>
+<a id="a710fa9e36d506aa35707c67834b65573" name="a710fa9e36d506aa35707c67834b65573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a710fa9e36d506aa35707c67834b65573">&#9670;&#160;</a></span>Remplissage_Y()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolveurImpl::Remplissage_Y </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_som</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>V</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Force</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>M</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&#160;</td>
+          <td class="paramname"><em>gravite</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_m_s_s.html">MSS</a> *&#160;</td>
+          <td class="paramname"><em>_SystemeMasseRessort</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Fonction construisant le vecteur Y du systeme HX = Y avec Y = dt f(t) + dt^2 df/dx v(t) </p>
+<p>Matrice des contributions des forces df/dx</p>
+
+</div>
+</div>
+<a id="afc76236fb501bf15ed37b364cc7c005e" name="afc76236fb501bf15ed37b364cc7c005e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc76236fb501bf15ed37b364cc7c005e">&#9670;&#160;</a></span>Resolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolveurImpl::Resolution </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_som</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>M</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_m_s_s.html">MSS</a> *&#160;</td>
+          <td class="paramname"><em>_SystemeMasseRessort</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Fonction resolvant HX = Y par la methode du gradient conjugue </p>
+
+</div>
+</div>
+<a id="a91139a2df0e07f3bc7f5b899adb31fa4" name="a91139a2df0e07f3bc7f5b899adb31fa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91139a2df0e07f3bc7f5b899adb31fa4">&#9670;&#160;</a></span>Solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolveurImpl::Solve </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>visco</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_som</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Tps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Force</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>V</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>M</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&#160;</td>
+          <td class="paramname"><em>gravite</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_m_s_s.html">MSS</a> *&#160;</td>
+          <td class="paramname"><em>_SystemeMasseRessort</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calcul des vitesses et positions </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a id="a8de8930d5c37c31c5a8dc74c56e9a352" name="a8de8930d5c37c31c5a8dc74c56e9a352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8de8930d5c37c31c5a8dc74c56e9a352">&#9670;&#160;</a></span>_alpha</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SolveurImpl::_alpha</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Taille du pas du GC. </p>
+
+</div>
+</div>
+<a id="aa0937ae99c248cdd71b53f545724faf5" name="aa0937ae99c248cdd71b53f545724faf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0937ae99c248cdd71b53f545724faf5">&#9670;&#160;</a></span>_beta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SolveurImpl::_beta</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Facteur d erreur. </p>
+
+</div>
+</div>
+<a id="ab67c06e8dc0522111ac357f1c70bde46" name="ab67c06e8dc0522111ac357f1c70bde46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab67c06e8dc0522111ac357f1c70bde46">&#9670;&#160;</a></span>_delta_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float SolveurImpl::_delta_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pas de temps. </p>
+
+</div>
+</div>
+<a id="a575903397cbb1513a705bdefc085bb95" name="a575903397cbb1513a705bdefc085bb95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a575903397cbb1513a705bdefc085bb95">&#9670;&#160;</a></span>_Nb_Iter_VitImpl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SolveurImpl::_Nb_Iter_VitImpl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Nombre d iterations pour le calcul des vitesses en implicite. </p>
+
+</div>
+</div>
+<a id="a704975ac36610ab16b4e5da6d0aeabbc" name="a704975ac36610ab16b4e5da6d0aeabbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a704975ac36610ab16b4e5da6d0aeabbc">&#9670;&#160;</a></span>Df_Dv_diag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;float&gt; &gt; SolveurImpl::Df_Dv_diag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Matrice des contributions des forces df/dv : elements diagonaux et hors diagonale </p>
+
+</div>
+</div>
+<a id="a4cf0ea9227cddd500fed6a5d68dd7762" name="a4cf0ea9227cddd500fed6a5d68dd7762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cf0ea9227cddd500fed6a5d68dd7762">&#9670;&#160;</a></span>Df_Dx_diag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;float&gt; &gt; SolveurImpl::Df_Dx_diag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>elements diagonaux et hors diagonale </p>
+<p>Matrice des contributions des forces df/dx et df/dv : Chacun des elements et une matrice 3 x 3 par symetrie peut etre reduit a 6 valeurs </p>
+
+</div>
+</div>
+<a id="ac7d38cb8031f50e0585653df7aa1ec6b" name="ac7d38cb8031f50e0585653df7aa1ec6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7d38cb8031f50e0585653df7aa1ec6b">&#9670;&#160;</a></span>PP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Vector&gt; SolveurImpl::PP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vecteur PP de direction. </p>
+
+</div>
+</div>
+<a id="ace8098a5a5244ebdc4871adfb664b392" name="ace8098a5a5244ebdc4871adfb664b392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace8098a5a5244ebdc4871adfb664b392">&#9670;&#160;</a></span>R</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Vector&gt; SolveurImpl::R</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vecteur R de residu : R = Y - HX. </p>
+
+</div>
+</div>
+<a id="a1ca91c045f58ac41e90f27be1314c879" name="a1ca91c045f58ac41e90f27be1314c879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca91c045f58ac41e90f27be1314c879">&#9670;&#160;</a></span>W</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Vector&gt; SolveurImpl::W</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Vecteur W pour la resolution du systeme W = H PP = (M - dt df/dv - dt^2 df/dx) * PP </p>
+
+</div>
+</div>
+<a id="a97030ca752f4d618afa5ca87d7f1fc08" name="a97030ca752f4d618afa5ca87d7f1fc08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97030ca752f4d618afa5ca87d7f1fc08">&#9670;&#160;</a></span>W1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Vector&gt; SolveurImpl::W1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vecteur W1 = df/dv * PP. </p>
+
+</div>
+</div>
+<a id="a1f6ffddd3fe038a756b93efe9ce4e116" name="a1f6ffddd3fe038a756b93efe9ce4e116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f6ffddd3fe038a756b93efe9ce4e116">&#9670;&#160;</a></span>W2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Vector&gt; SolveurImpl::W2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vecteur W2 = df/dx * PP. </p>
+
+</div>
+</div>
+<a id="a35deb3fd80bc81fecf24f515ad982675" name="a35deb3fd80bc81fecf24f515ad982675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35deb3fd80bc81fecf24f515ad982675">&#9670;&#160;</a></span>X</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Vector&gt; SolveurImpl::X</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Declaration du vecteur X du systeme HX = Y. </p>
+
+</div>
+</div>
+<a id="a2e23a32fffb046ffa4a261deccf42ac0" name="a2e23a32fffb046ffa4a261deccf42ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e23a32fffb046ffa4a261deccf42ac0">&#9670;&#160;</a></span>Y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Vector&gt; SolveurImpl::Y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Declaration du vecteur Y du systeme HX = Y. </p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>src-etudiant/<a class="el" href="_solveur_impl_8h_source.html">SolveurImpl.h</a></li>
+<li>src-etudiant/<b>CalculsImpl.cpp</b></li>
+<li>src-etudiant/<a class="el" href="_solveur_impl_8cpp.html">SolveurImpl.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

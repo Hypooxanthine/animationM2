@@ -87,7 +87,7 @@ Matrix Matrix::AngleVectorToMatrix(Vector axe, float angle_degres)
     {
         direction = normalize(axe);
         
-        std::cout << direction << std::endl;
+        // std::cout << direction << std::endl;
         
         // https://fr.wikipedia.org/wiki/Matrice_de_rotation
         // Matrice de rotation à partir d'un axe et d'un angle

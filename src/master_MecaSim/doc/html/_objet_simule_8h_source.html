@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Animation 3D (master_meca_sim):  Fichier source de src-etudiant/ObjetSimule.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Animation 3D (master_meca_sim)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6a0b4331353b5e5054bef558e30b5fe0.html">src-etudiant</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">ObjetSimule.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_objet_simule_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef OBJET_SIMULE_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define OBJET_SIMULE_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// Fichiers de gkit2light</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;vec.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;mesh.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// Fichiers de master_meca_sim</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="_m_s_s_8h.html">MSS.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="_noeuds_8h.html">Noeuds.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="_properties_8h.html">Properties.h</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="struct_texture.html">   34</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_texture.html">Texture</a></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct_texture.html#adad083895a72191db4f76713374b6ee9">   37</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="struct_texture.html#adad083895a72191db4f76713374b6ee9">u</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_texture.html#a44b9854f1eaa7992f054dbad23edc3e8">   40</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="struct_texture.html#a44b9854f1eaa7992f054dbad23edc3e8">v</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_facet_triangle.html">   48</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_facet_triangle.html">FacetTriangle</a></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_facet_triangle.html#aa138dcce5a42ddb79320136761f69c4e">   51</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_facet_triangle.html#aa138dcce5a42ddb79320136761f69c4e">fi</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_facet_triangle.html#aadea6b438092c3ae9a7969e7ff5d49a7">   54</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_facet_triangle.html#aadea6b438092c3ae9a7969e7ff5d49a7">fj</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_facet_triangle.html#a644b5485ec1ab0bd19cfc8b6dea82574">   57</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_facet_triangle.html#a644b5485ec1ab0bd19cfc8b6dea82574">fk</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="};">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_objet_simule.html">   65</a></span><span class="keyword">class </span><a class="code hl_class" href="class_objet_simule.html">ObjetSimule</a>: <span class="keyword">public</span> <a class="code hl_class" href="class_noeud.html">Noeud</a></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_class" href="class_objet_simule.html">ObjetSimule</a>(std::string fich_param);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule.html#ae61ebb09832c98753d0d1e98a5de5602">Param_mesh</a>(std::string fich_param);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_objet_simule.html#a7fd559600d670065daa28930d8c467a1">   76</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule.html#a7fd559600d670065daa28930d8c467a1">initObjetSimule</a>() = 0;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_objet_simule.html#ab31b065903220faa22c3e823dbe348d0">   79</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule.html#ab31b065903220faa22c3e823dbe348d0">updateVertex</a>() = 0;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_objet_simule.html#ac2089b122e108533c06698e4b0057247">   82</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule.html#ac2089b122e108533c06698e4b0057247">initMeshObjet</a>() = 0;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_objet_simule.html#a9c2bd19c2286b3c6f64b350b79e50028">   85</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule.html#a9c2bd19c2286b3c6f64b350b79e50028">Collision</a>() = 0;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_objet_simule.html#a7fd4208bbbfda1765dd9f427e5290e3c">   88</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule.html#a7fd4208bbbfda1765dd9f427e5290e3c">Simulation</a>(Vector gravite, <span class="keywordtype">float</span> viscosite, <span class="keywordtype">int</span> Tps) = 0;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule.html#aaddacd3d256a7a8ffc386807defe8006">Interaction</a>(Vector MousePos);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule.html#a4638c413154c1fc847a0ef06548acf42">AffichagePos</a>(<span class="keywordtype">int</span> tps);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="class_objet_simule.html#a8c82c229ea9ae7b6e2fdebb50adbd85e">  101</a></span>    std::string <a class="code hl_variable" href="class_objet_simule.html#a8c82c229ea9ae7b6e2fdebb50adbd85e">_Fich_Points</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_objet_simule.html#a6915d4c280b1ce388820b68b5fd3c591">  104</a></span>    std::string <a class="code hl_variable" href="class_objet_simule.html#a6915d4c280b1ce388820b68b5fd3c591">_Fich_Masses</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_objet_simule.html#aa22c89d0db21f247eb1c2a81d3ccd63f">  107</a></span>    std::string <a class="code hl_variable" href="class_objet_simule.html#aa22c89d0db21f247eb1c2a81d3ccd63f">_Interaction</a>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="class_objet_simule.html#af1a3c8a042e41af9bf87ce1b898180a5">  111</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_objet_simule.html#af1a3c8a042e41af9bf87ce1b898180a5">_Friction</a> = 1.0f;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_objet_simule.html#a3979b3fb1bd082a5d336bb01d65d05d6">  115</a></span>    std::vector&lt;Vector&gt; <a class="code hl_variable" href="class_objet_simule.html#a3979b3fb1bd082a5d336bb01d65d05d6">V</a>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_objet_simule.html#aeca2dafb9535a368b3ec98ced14295df">  118</a></span>    std::vector&lt;Vector&gt; <a class="code hl_variable" href="class_objet_simule.html#aeca2dafb9535a368b3ec98ced14295df">A</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="class_objet_simule.html#ab50474e2a5f1889c13b3c5c068b3ed46">  121</a></span>    std::vector&lt;Vector&gt; <a class="code hl_variable" href="class_objet_simule.html#ab50474e2a5f1889c13b3c5c068b3ed46">Force</a>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="class_objet_simule.html#a4540b2c8f9cf33986840b162f8a75682">  124</a></span>    std::vector&lt;float&gt; <a class="code hl_variable" href="class_objet_simule.html#a4540b2c8f9cf33986840b162f8a75682">M</a>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>};</div>
+</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_m_s_s_8h_html"><div class="ttname"><a href="_m_s_s_8h.html">MSS.h</a></div><div class="ttdoc">Structures de donnes relatives a la construction du maillage triangulaire relatif au systeme masse-re...</div></div>
+<div class="ttc" id="a_noeuds_8h_html"><div class="ttname"><a href="_noeuds_8h.html">Noeuds.h</a></div><div class="ttdoc">Definition des classes de noeuds du graphe de scene.</div></div>
+<div class="ttc" id="a_properties_8h_html"><div class="ttname"><a href="_properties_8h.html">Properties.h</a></div><div class="ttdoc">Permet la lecture des donnees mises dans le fichier d execution.</div></div>
+<div class="ttc" id="aclass_noeud_html"><div class="ttname"><a href="class_noeud.html">Noeud</a></div><div class="ttdoc">Classe de base pour tous les elements de la scene.</div><div class="ttdef"><b>Definition</b> Noeuds.h:50</div></div>
+<div class="ttc" id="aclass_objet_simule_html"><div class="ttname"><a href="class_objet_simule.html">ObjetSimule</a></div><div class="ttdoc">Structure de donnees de base des objets simules.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:66</div></div>
+<div class="ttc" id="aclass_objet_simule_html_a3979b3fb1bd082a5d336bb01d65d05d6"><div class="ttname"><a href="class_objet_simule.html#a3979b3fb1bd082a5d336bb01d65d05d6">ObjetSimule::V</a></div><div class="ttdeci">std::vector&lt; Vector &gt; V</div><div class="ttdoc">Declaration du tableau des vitesses.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:115</div></div>
+<div class="ttc" id="aclass_objet_simule_html_a4540b2c8f9cf33986840b162f8a75682"><div class="ttname"><a href="class_objet_simule.html#a4540b2c8f9cf33986840b162f8a75682">ObjetSimule::M</a></div><div class="ttdeci">std::vector&lt; float &gt; M</div><div class="ttdoc">Declaration du tableau des masses.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:124</div></div>
+<div class="ttc" id="aclass_objet_simule_html_a4638c413154c1fc847a0ef06548acf42"><div class="ttname"><a href="class_objet_simule.html#a4638c413154c1fc847a0ef06548acf42">ObjetSimule::AffichagePos</a></div><div class="ttdeci">void AffichagePos(int tps)</div><div class="ttdef"><b>Definition</b> ObjetSimule.cpp:78</div></div>
+<div class="ttc" id="aclass_objet_simule_html_a6915d4c280b1ce388820b68b5fd3c591"><div class="ttname"><a href="class_objet_simule.html#a6915d4c280b1ce388820b68b5fd3c591">ObjetSimule::_Fich_Masses</a></div><div class="ttdeci">std::string _Fich_Masses</div><div class="ttdoc">Fichier de donnees contenant les masses.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:104</div></div>
+<div class="ttc" id="aclass_objet_simule_html_a7fd4208bbbfda1765dd9f427e5290e3c"><div class="ttname"><a href="class_objet_simule.html#a7fd4208bbbfda1765dd9f427e5290e3c">ObjetSimule::Simulation</a></div><div class="ttdeci">virtual void Simulation(Vector gravite, float viscosite, int Tps)=0</div></div>
+<div class="ttc" id="aclass_objet_simule_html_a7fd559600d670065daa28930d8c467a1"><div class="ttname"><a href="class_objet_simule.html#a7fd559600d670065daa28930d8c467a1">ObjetSimule::initObjetSimule</a></div><div class="ttdeci">virtual void initObjetSimule()=0</div></div>
+<div class="ttc" id="aclass_objet_simule_html_a8c82c229ea9ae7b6e2fdebb50adbd85e"><div class="ttname"><a href="class_objet_simule.html#a8c82c229ea9ae7b6e2fdebb50adbd85e">ObjetSimule::_Fich_Points</a></div><div class="ttdeci">std::string _Fich_Points</div><div class="ttdoc">Fichier de donnees contenant les points.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:101</div></div>
+<div class="ttc" id="aclass_objet_simule_html_a9c2bd19c2286b3c6f64b350b79e50028"><div class="ttname"><a href="class_objet_simule.html#a9c2bd19c2286b3c6f64b350b79e50028">ObjetSimule::Collision</a></div><div class="ttdeci">virtual void Collision()=0</div></div>
+<div class="ttc" id="aclass_objet_simule_html_aa22c89d0db21f247eb1c2a81d3ccd63f"><div class="ttname"><a href="class_objet_simule.html#aa22c89d0db21f247eb1c2a81d3ccd63f">ObjetSimule::_Interaction</a></div><div class="ttdeci">std::string _Interaction</div><div class="ttdoc">Interaction avec l utilisateur ou non.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:107</div></div>
+<div class="ttc" id="aclass_objet_simule_html_aaddacd3d256a7a8ffc386807defe8006"><div class="ttname"><a href="class_objet_simule.html#aaddacd3d256a7a8ffc386807defe8006">ObjetSimule::Interaction</a></div><div class="ttdeci">void Interaction(Vector MousePos)</div><div class="ttdoc">Interaction avec l utilisateur. Methode invoquee par le graphe de scene.</div><div class="ttdef"><b>Definition</b> ObjetSimule.cpp:63</div></div>
+<div class="ttc" id="aclass_objet_simule_html_ab31b065903220faa22c3e823dbe348d0"><div class="ttname"><a href="class_objet_simule.html#ab31b065903220faa22c3e823dbe348d0">ObjetSimule::updateVertex</a></div><div class="ttdeci">virtual void updateVertex()=0</div></div>
+<div class="ttc" id="aclass_objet_simule_html_ab50474e2a5f1889c13b3c5c068b3ed46"><div class="ttname"><a href="class_objet_simule.html#ab50474e2a5f1889c13b3c5c068b3ed46">ObjetSimule::Force</a></div><div class="ttdeci">std::vector&lt; Vector &gt; Force</div><div class="ttdoc">Declaration du tableau des forces.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:121</div></div>
+<div class="ttc" id="aclass_objet_simule_html_ac2089b122e108533c06698e4b0057247"><div class="ttname"><a href="class_objet_simule.html#ac2089b122e108533c06698e4b0057247">ObjetSimule::initMeshObjet</a></div><div class="ttdeci">virtual void initMeshObjet()=0</div></div>
+<div class="ttc" id="aclass_objet_simule_html_ae61ebb09832c98753d0d1e98a5de5602"><div class="ttname"><a href="class_objet_simule.html#ae61ebb09832c98753d0d1e98a5de5602">ObjetSimule::Param_mesh</a></div><div class="ttdeci">void Param_mesh(std::string fich_param)</div><div class="ttdef"><b>Definition</b> Param.cpp:105</div></div>
+<div class="ttc" id="aclass_objet_simule_html_aeca2dafb9535a368b3ec98ced14295df"><div class="ttname"><a href="class_objet_simule.html#aeca2dafb9535a368b3ec98ced14295df">ObjetSimule::A</a></div><div class="ttdeci">std::vector&lt; Vector &gt; A</div><div class="ttdoc">Declaration du tableau des accelerations.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:118</div></div>
+<div class="ttc" id="aclass_objet_simule_html_af1a3c8a042e41af9bf87ce1b898180a5"><div class="ttname"><a href="class_objet_simule.html#af1a3c8a042e41af9bf87ce1b898180a5">ObjetSimule::_Friction</a></div><div class="ttdeci">float _Friction</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:111</div></div>
+<div class="ttc" id="astruct_facet_triangle_html"><div class="ttname"><a href="struct_facet_triangle.html">FacetTriangle</a></div><div class="ttdoc">Facette determinee par valeurs fi, fj, fk : indices des sommets dans le fichier.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:49</div></div>
+<div class="ttc" id="astruct_facet_triangle_html_a644b5485ec1ab0bd19cfc8b6dea82574"><div class="ttname"><a href="struct_facet_triangle.html#a644b5485ec1ab0bd19cfc8b6dea82574">FacetTriangle::fk</a></div><div class="ttdeci">int fk</div><div class="ttdoc">Troisieme sommet de la facette.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:57</div></div>
+<div class="ttc" id="astruct_facet_triangle_html_aa138dcce5a42ddb79320136761f69c4e"><div class="ttname"><a href="struct_facet_triangle.html#aa138dcce5a42ddb79320136761f69c4e">FacetTriangle::fi</a></div><div class="ttdeci">int fi</div><div class="ttdoc">Premier sommet de la facette.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:51</div></div>
+<div class="ttc" id="astruct_facet_triangle_html_aadea6b438092c3ae9a7969e7ff5d49a7"><div class="ttname"><a href="struct_facet_triangle.html#aadea6b438092c3ae9a7969e7ff5d49a7">FacetTriangle::fj</a></div><div class="ttdeci">int fj</div><div class="ttdoc">Second sommet de la facette.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:54</div></div>
+<div class="ttc" id="astruct_texture_html"><div class="ttname"><a href="struct_texture.html">Texture</a></div><div class="ttdoc">Texture determinee par valeurs a et b.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:35</div></div>
+<div class="ttc" id="astruct_texture_html_a44b9854f1eaa7992f054dbad23edc3e8"><div class="ttname"><a href="struct_texture.html#a44b9854f1eaa7992f054dbad23edc3e8">Texture::v</a></div><div class="ttdeci">float v</div><div class="ttdoc">Coordonnee b de la texture.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:40</div></div>
+<div class="ttc" id="astruct_texture_html_adad083895a72191db4f76713374b6ee9"><div class="ttname"><a href="struct_texture.html#adad083895a72191db4f76713374b6ee9">Texture::u</a></div><div class="ttdeci">float u</div><div class="ttdoc">Coordonnee a de la texture.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:37</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

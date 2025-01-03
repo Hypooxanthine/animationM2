@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Animation 3D (master_meca_sim):  Fichier source de src-etudiant/Noeuds.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Animation 3D (master_meca_sim)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6a0b4331353b5e5054bef558e30b5fe0.html">src-etudiant</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Noeuds.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_noeuds_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Noeuds.h : Scene 3D</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Copyright (C) 2016 Florence Zara, LIRIS</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *               florence.zara@liris.univ-lyon1.fr</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *               http://liris.cnrs.fr/florence.zara/</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * This program is free software; you can redistribute it and/or modify</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * it under the terms of the GNU Lesser General Public License as published</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * by the Free Software Foundation; either version 2.1 of the License, or</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * (at your option) any later version.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * along with this program; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#ifndef NOEUDS_H</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#define NOEUDS_H</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;vec.h&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;draw.h&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_noeud.html">   49</a></span><span class="keyword">class </span><a class="code hl_class" href="class_noeud.html">Noeud</a> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_noeud.html#a1b2d968cd5d897a20e98df79a9b3025a">   54</a></span>    <a class="code hl_function" href="class_noeud.html#a1b2d968cd5d897a20e98df79a9b3025a">Noeud</a>() {}</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_noeud.html#ad8fdb6e9ce21f26a4e74116d7fad8c4e">   57</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_noeud.html#ad8fdb6e9ce21f26a4e74116d7fad8c4e">setName</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* n) {<a class="code hl_variable" href="class_noeud.html#a85546b7ff799d3ae2bdce0ebb2f29bbe">_name</a> = std::string(n); }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_noeud.html#a94638de0c3455b4fa98644c29eedb7ea">   60</a></span>    <span class="keyword">const</span> std::string &amp;<a class="code hl_function" href="class_noeud.html#a94638de0c3455b4fa98644c29eedb7ea">getName</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="class_noeud.html#a85546b7ff799d3ae2bdce0ebb2f29bbe">_name</a>;}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_noeud.html#a325640db4ca47b181c505b75440b421b">   63</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_noeud.html#a325640db4ca47b181c505b75440b421b">initObjetSimule</a>() = 0;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_noeud.html#aad92de0750b3352b23aee55e9e31c514">   66</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_noeud.html#aad92de0750b3352b23aee55e9e31c514">initMeshObjet</a>() = 0;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_noeud.html#a9aced23a85f27a0f8c8d2a11efe3cc6d">   69</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_noeud.html#a9aced23a85f27a0f8c8d2a11efe3cc6d">Simulation</a>(Vector gravite, <span class="keywordtype">float</span> viscosite, <span class="keywordtype">int</span> Tps) = 0;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_noeud.html#a8c6b10ae30990764b9a10bd1d94e4655">   72</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_noeud.html#a8c6b10ae30990764b9a10bd1d94e4655">Collision</a>() = 0;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_noeud.html#a621bf9ce6a478ed61ea357f9045c07af">   75</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_noeud.html#a621bf9ce6a478ed61ea357f9045c07af">Interaction</a>(Vector MousePos) = 0;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_noeud.html#a1eee3fc6283b689d9de85365f2ae85c3">   78</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_noeud.html#a1eee3fc6283b689d9de85365f2ae85c3">updateVertex</a>() = 0;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_noeud.html#afde029cd93b16aaa7d1cddb82d170db9">   81</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_noeud.html#afde029cd93b16aaa7d1cddb82d170db9">~Noeud</a>(){};</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_noeud.html#a85546b7ff799d3ae2bdce0ebb2f29bbe">   87</a></span>    std::string <a class="code hl_variable" href="class_noeud.html#a85546b7ff799d3ae2bdce0ebb2f29bbe">_name</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_noeud.html#aa74b23408498d249e53755b7f5fcb136">   90</a></span>    Mesh <a class="code hl_variable" href="class_noeud.html#aa74b23408498d249e53755b7f5fcb136">m_ObjetSimule</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_noeud.html#ad1be0c19ebf26ad3df6d7b8e815ccedf">   93</a></span>    Vector <a class="code hl_variable" href="class_noeud.html#ad1be0c19ebf26ad3df6d7b8e815ccedf">Coord_Point_Inter</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_noeud.html#a44e2b3d38b3892e5b674eb178d493704">   96</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_noeud.html#a44e2b3d38b3892e5b674eb178d493704">_Nb_Sommets</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_noeud.html#a8ead828a6f99d65adecfdab1293a820e">   99</a></span>    std::vector&lt;Vector&gt; <a class="code hl_variable" href="class_noeud.html#a8ead828a6f99d65adecfdab1293a820e">P</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_noeud.html#a76b5b6e3f5ffe9ca240936092d2ad304">  102</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_noeud.html#a76b5b6e3f5ffe9ca240936092d2ad304">_use_texture</a>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>};</div>
+</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_noeud_html"><div class="ttname"><a href="class_noeud.html">Noeud</a></div><div class="ttdoc">Classe de base pour tous les elements de la scene.</div><div class="ttdef"><b>Definition</b> Noeuds.h:50</div></div>
+<div class="ttc" id="aclass_noeud_html_a1b2d968cd5d897a20e98df79a9b3025a"><div class="ttname"><a href="class_noeud.html#a1b2d968cd5d897a20e98df79a9b3025a">Noeud::Noeud</a></div><div class="ttdeci">Noeud()</div><div class="ttdef"><b>Definition</b> Noeuds.h:54</div></div>
+<div class="ttc" id="aclass_noeud_html_a1eee3fc6283b689d9de85365f2ae85c3"><div class="ttname"><a href="class_noeud.html#a1eee3fc6283b689d9de85365f2ae85c3">Noeud::updateVertex</a></div><div class="ttdeci">virtual void updateVertex()=0</div></div>
+<div class="ttc" id="aclass_noeud_html_a325640db4ca47b181c505b75440b421b"><div class="ttname"><a href="class_noeud.html#a325640db4ca47b181c505b75440b421b">Noeud::initObjetSimule</a></div><div class="ttdeci">virtual void initObjetSimule()=0</div></div>
+<div class="ttc" id="aclass_noeud_html_a44e2b3d38b3892e5b674eb178d493704"><div class="ttname"><a href="class_noeud.html#a44e2b3d38b3892e5b674eb178d493704">Noeud::_Nb_Sommets</a></div><div class="ttdeci">int _Nb_Sommets</div><div class="ttdoc">Nombre de sommets.</div><div class="ttdef"><b>Definition</b> Noeuds.h:96</div></div>
+<div class="ttc" id="aclass_noeud_html_a621bf9ce6a478ed61ea357f9045c07af"><div class="ttname"><a href="class_noeud.html#a621bf9ce6a478ed61ea357f9045c07af">Noeud::Interaction</a></div><div class="ttdeci">virtual void Interaction(Vector MousePos)=0</div></div>
+<div class="ttc" id="aclass_noeud_html_a76b5b6e3f5ffe9ca240936092d2ad304"><div class="ttname"><a href="class_noeud.html#a76b5b6e3f5ffe9ca240936092d2ad304">Noeud::_use_texture</a></div><div class="ttdeci">bool _use_texture</div><div class="ttdoc">Booleen : utilisation texture pour affichage.</div><div class="ttdef"><b>Definition</b> Noeuds.h:102</div></div>
+<div class="ttc" id="aclass_noeud_html_a85546b7ff799d3ae2bdce0ebb2f29bbe"><div class="ttname"><a href="class_noeud.html#a85546b7ff799d3ae2bdce0ebb2f29bbe">Noeud::_name</a></div><div class="ttdeci">std::string _name</div><div class="ttdoc">Nom du noeud.</div><div class="ttdef"><b>Definition</b> Noeuds.h:87</div></div>
+<div class="ttc" id="aclass_noeud_html_a8c6b10ae30990764b9a10bd1d94e4655"><div class="ttname"><a href="class_noeud.html#a8c6b10ae30990764b9a10bd1d94e4655">Noeud::Collision</a></div><div class="ttdeci">virtual void Collision()=0</div></div>
+<div class="ttc" id="aclass_noeud_html_a8ead828a6f99d65adecfdab1293a820e"><div class="ttname"><a href="class_noeud.html#a8ead828a6f99d65adecfdab1293a820e">Noeud::P</a></div><div class="ttdeci">std::vector&lt; Vector &gt; P</div><div class="ttdoc">Declaration du tableau des positions.</div><div class="ttdef"><b>Definition</b> Noeuds.h:99</div></div>
+<div class="ttc" id="aclass_noeud_html_a94638de0c3455b4fa98644c29eedb7ea"><div class="ttname"><a href="class_noeud.html#a94638de0c3455b4fa98644c29eedb7ea">Noeud::getName</a></div><div class="ttdeci">const std::string &amp; getName() const</div><div class="ttdef"><b>Definition</b> Noeuds.h:60</div></div>
+<div class="ttc" id="aclass_noeud_html_a9aced23a85f27a0f8c8d2a11efe3cc6d"><div class="ttname"><a href="class_noeud.html#a9aced23a85f27a0f8c8d2a11efe3cc6d">Noeud::Simulation</a></div><div class="ttdeci">virtual void Simulation(Vector gravite, float viscosite, int Tps)=0</div></div>
+<div class="ttc" id="aclass_noeud_html_aa74b23408498d249e53755b7f5fcb136"><div class="ttname"><a href="class_noeud.html#aa74b23408498d249e53755b7f5fcb136">Noeud::m_ObjetSimule</a></div><div class="ttdeci">Mesh m_ObjetSimule</div><div class="ttdoc">Declaration du Mesh (maillage pour l affichage)</div><div class="ttdef"><b>Definition</b> Noeuds.h:90</div></div>
+<div class="ttc" id="aclass_noeud_html_aad92de0750b3352b23aee55e9e31c514"><div class="ttname"><a href="class_noeud.html#aad92de0750b3352b23aee55e9e31c514">Noeud::initMeshObjet</a></div><div class="ttdeci">virtual void initMeshObjet()=0</div></div>
+<div class="ttc" id="aclass_noeud_html_ad1be0c19ebf26ad3df6d7b8e815ccedf"><div class="ttname"><a href="class_noeud.html#ad1be0c19ebf26ad3df6d7b8e815ccedf">Noeud::Coord_Point_Inter</a></div><div class="ttdeci">Vector Coord_Point_Inter</div><div class="ttdoc">Coordonnees du point d interaction.</div><div class="ttdef"><b>Definition</b> Noeuds.h:93</div></div>
+<div class="ttc" id="aclass_noeud_html_ad8fdb6e9ce21f26a4e74116d7fad8c4e"><div class="ttname"><a href="class_noeud.html#ad8fdb6e9ce21f26a4e74116d7fad8c4e">Noeud::setName</a></div><div class="ttdeci">void setName(const char *n)</div><div class="ttdef"><b>Definition</b> Noeuds.h:57</div></div>
+<div class="ttc" id="aclass_noeud_html_afde029cd93b16aaa7d1cddb82d170db9"><div class="ttname"><a href="class_noeud.html#afde029cd93b16aaa7d1cddb82d170db9">Noeud::~Noeud</a></div><div class="ttdeci">virtual ~Noeud()</div><div class="ttdef"><b>Definition</b> Noeuds.h:81</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

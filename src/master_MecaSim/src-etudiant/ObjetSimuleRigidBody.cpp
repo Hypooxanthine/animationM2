@@ -62,10 +62,10 @@ ObjetSimuleRigidBody::ObjetSimuleRigidBody(std::string fich_param)
     // - quantite de mouvement : P(t) : _QuantiteMouvement
     // - moment cinetique : L(t) : _MomentCinetique
     
-   // cout << _Position << endl;
-   // cout << _Rotation << endl;
-   //cout << _QuantiteMouvement << endl;
-   //cout << _MomentCinetique << endl;
+   cout << _Position << endl;
+   cout << _Rotation << endl;
+   cout << _QuantiteMouvement << endl;
+   cout << _MomentCinetique << endl;
     
 }
 
@@ -79,6 +79,8 @@ void ObjetSimuleRigidBody::initObjetSimule()
 {
     /** Initialisation des structures de donnees heritees du ObjetSimuleMSS **/
     ObjetSimuleMSS::initObjetSimule();
+
+    _Rotation = Matrix::UnitMatrix();
     
     /** Initialisation des membres specifiques a l objet rigide **/
     
@@ -104,7 +106,28 @@ void ObjetSimuleRigidBody::initMeshObjet()
     
     
     std::cout << "Maillage du RigidBody pour affichage build ..." << std::endl;
-    
+
+    _ROi = P;
+    _Ri = P;
+
+    m_ObjetSimule.create(GL_TRIANGLES);
+
+    bool useNormals = _vectNormals.size() == P.size();
+    bool useTexture = _vectTexture.size() == P.size();
+
+    for (size_t i = 0; i < P.size(); ++i)
+    {
+        if (useTexture)
+            m_ObjetSimule.texcoord(_vectTexture[i].u, _vectTexture[i].v);
+        if (useNormals)
+            m_ObjetSimule.normal(_vectNormals[i].x, _vectNormals[i].y, _vectNormals[i].z);
+        m_ObjetSimule.vertex(_ROi[i].x, _ROi[i].y, _ROi[i].z);
+    }
+
+    for (size_t i = 0; i < _VIndices.size(); i += 3)
+    {
+        m_ObjetSimule.triangle(_VIndices[i], _VIndices[i + 1], _VIndices[i + 2]);
+    }
 }
 
 
@@ -118,7 +141,13 @@ void ObjetSimuleRigidBody::updateVertex()
     
     // Cas ou on utilise le tableau des positions P pour faire la mise a jour du Mesh
     // Sinon rien dans cette fonction, et translation du Mesh initial en fonction de _Position
+
+    // _Rotation = Matrix::AngleVectorToMatrix({1.f, 0.f, 0.f}, _delta_t * 10.f) * _Rotation;
     
+    for (size_t i = 0; i < P.size(); ++i)
+    {
+        m_ObjetSimule.vertex(i, _Ri[i].x, _Ri[i].y, _Ri[i].z);
+    }
 }
 
 
@@ -147,7 +176,7 @@ void ObjetSimuleRigidBody::Simulation(Vector gravite, float viscosite, int Tps)
     /* ! Gestion des collisions */
     // Reponse : reste a la position du sol par exemple - arret des vitesses
     // Penser au Translate de l objet dans la scene pour trouver plan coherent
-    //  Collision();
+     Collision();
     
     // Affichage des positions
     //cout << " Position du centre de masse de l objet rigide :" << _Position << endl;

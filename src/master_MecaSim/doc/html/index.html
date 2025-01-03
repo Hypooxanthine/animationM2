@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Animation 3D (master_meca_sim): Animation 3D - Documentation</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Animation 3D (master_meca_sim)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Animation 3D - Documentation </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Cette page explique :</p>
+<ul>
+<li><a class="el" href="index.html#sec-exec">Comment lancer l'application ?</a><ul>
+<li><a class="el" href="index.html#subsec-data">Repertoire ou se trouvent les donnees : gkit2light/data/</a></li>
+<li><a class="el" href="index.html#subsec-rep">Plusieurs fichiers dans ces repertoires</a></li>
+<li><a class="el" href="index.html#subsec-exec">Repertoire pour l'execution de l'application : gkit2light/src/master_MecaSim/exec/</a></li>
+<li><a class="el" href="index.html#sub-lan">Pour lancer l'application depuis le repertoire gkit2light</a></li>
+</ul>
+</li>
+<li><a class="el" href="index.html#sec-viewer">Viewer de l'application</a></li>
+<li><a class="el" href="index.html#section-graphe">Le graphe de scene</a> qui permet de lier tous les objets de la scene</li>
+<li><a class="el" href="index.html#sec-visu2">Representation d'un objet de la scene pour le visualiser</a></li>
+<li><a class="el" href="index.html#sec3">Representation d'un objet de la scene pour l'animer</a></li>
+<li><a class="el" href="index.html#sec4">Algorithmes de la simulation</a><ul>
+<li><a class="el" href="index.html#subsec41">Boucle de la simulation</a></li>
+<li><a class="el" href="index.html#subsec42">Calcul des forces</a></li>
+<li><a class="el" href="index.html#subsec43">Calcul des accelerations</a></li>
+<li><a class="el" href="index.html#subsec44">Calcul des vitesses et des positions</a></li>
+</ul>
+</li>
+<li><a class="el" href="index.html#sec-visu3">Calculs effectues pour la visualisation</a><ul>
+<li><a class="el" href="index.html#subsection-visu31">Calcul de la normale d'une face</a></li>
+<li><a class="el" href="index.html#subsection-visu32">Lissage des normales des sommets</a></li>
+</ul>
+</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="sec-exec"></a>
+Comment lancer l'application ?</h1>
+<h2><a class="anchor" id="subsec-data"></a>
+Repertoire ou se trouvent les donnees : gkit2light/data/</h2>
+<ul>
+<li>gkit2light/data/ <b>textures</b> : pour placer des textures</li>
+<li>gkit2light/data/ <b>CreateMesh</b> : programme pour creer des maillages de tissu ou convertir des fichiers .obj .off en fichiers pour l'application</li>
+<li>gkit2light/data/ <b>drap10</b> : fichiers de donnees d'un tissu de 10 * 10 particules</li>
+<li>gkit2light/data/ <b>drap70</b> : fichiers de donnees d'un tissu de 70 * 70 particules</li>
+<li>gkit2light/data/ <b>vache</b> : fichiers de donnees d'une vache</li>
+<li>gkit2light/data/ <b>sphere</b> : fichiers de donnees d'une sphere</li>
+<li>gkit2light/data/ <b>bunny</b> : fichiers de donnees du Standford bunny</li>
+</ul>
+<h2><a class="anchor" id="subsec-rep"></a>
+Plusieurs fichiers dans ces repertoires</h2>
+<ul>
+<li><b>faceset.eti</b> : definition des facettes triangulaires de l'objet</li>
+<li><b>masses.eti</b> : definition des masses associees aux sommets de l'objet</li>
+<li><b>points.eti</b> : definition des coordonnees (x,y,z) des sommets de l'objet</li>
+<li><b>texcoord.eti</b> : definition des coordonnees de textures des sommets de l'objet</li>
+</ul>
+<h2><a class="anchor" id="subsec-exec"></a>
+Repertoire pour l'execution de l'application : gkit2light/src/master_MecaSim/exec/</h2>
+<ul>
+<li><b>Fichier_Param.simu</b> : parametres de la simulation - gravite, viscosite, nb iterations</li>
+<li><b>Fichier_Param.objet</b> : parametres de l'objet simule - donnees, k, nu, dt, etc.</li>
+</ul>
+<h2><a class="anchor" id="sub-lan"></a>
+Pour lancer l'application depuis le repertoire gkit2light</h2>
+<ul>
+<li>Creer un fichier qui s'appelle go</li>
+<li>Mettre dedans l'instruction suivante : ./bin/master_meca_sim_etudiant 1 ./src/master_MecaSim/exec/Fichier_Param.simu ./src/master_MecaSim/exec/Fichier_Param.objet1</li>
+<li>Faire : chmod +x go</li>
+<li>Lancer : ./go depuis le repertoire gkit2light</li>
+<li>ou de maniere generale : Executable nbObjet fichier_param_simulation fichier_param_Obj1 fichier_param_Obj2 ...</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="sec-viewer"></a>
+Viewer de l'application</h1>
+<p>La methode init() de <a class="el" href="class_viewer.html">Viewer</a> (dans Vierwer-init.cpp) permet de creer le maillage des objets servant pour leur affichage.</p>
+<p>La methode render() de <a class="el" href="class_viewer.html">Viewer</a> permet l'affichage les maillages (de type Mesh) des objets de la scene. Pour cela nous invoquons gl.draw() sur les Mesh des elements de la <a class="el" href="class_scene.html">Scene</a>. La classe <a class="el" href="class_noeud.html">Noeud</a> comporte ainsi le membre m_ObjetSimule de type Mesh (maillage servant a l'affichage des objets simules).</p>
+<p>La methode update() de <a class="el" href="class_viewer.html">Viewer</a> permet de mettre a jour le Mesh des objets (maillage de l objet cree pour effectuer l affichage) en invoquant la methode updateVertex() pour chacun des elements du graphe de scene. La methode Simulation est notamment invoquee dans cette methode.</p>
+<p>La touche 'h' permet de faire apparaitre le menu d'aide de l'application : affichage plein ecran, zoom, etc.</p>
+<hr  />
+<h1><a class="anchor" id="section-graphe"></a>
+Le graphe de scene</h1>
+<p>Le graphe de scene est defini dans la classe <a class="el" href="class_viewer.html">Viewer</a> par la variable _Simu de type <a class="el" href="class_scene.html">Scene</a>. Il permet de gerer les differents objets de la scene (qui sont attaches a la scene des leur creation).</p>
+<ul>
+<li>La classe <a class="el" href="class_scene.html">Scene</a> contient ainsi la liste des <a class="el" href="class_noeud.html">Noeud</a> de la scene (les enfants). Chaque objet que nous souhaitons gerer doit ainsi heriter de la classe <a class="el" href="class_noeud.html">Noeud</a>. Par exemple la classe <a class="el" href="class_objet_simule.html">ObjetSimule</a> herite de la classe <a class="el" href="class_noeud.html">Noeud</a>.</li>
+<li>Les differentes methodes de la classe <a class="el" href="class_scene.html">Scene</a> vont permettre d'appeler les methodes correspondantes pour chacun des objets <a class="el" href="class_noeud.html">Noeud</a> attaches a la scene. Les methodes virtuelles pures de la classe <a class="el" href="class_noeud.html">Noeud</a> doivent ainsi obligatoirement etre implementees dans les classes relatives aux differents objets de la scene (meme si elles ne font rien).<ul>
+<li>La methode initObjetSimule() de <a class="el" href="class_scene.html">Scene</a> permet d'initialiser les structures de donnees des objets a partir des donnees fournies par les fichiers de donnees (definition des positions des particules, des masses, etc.)</li>
+<li>La methode initMeshObjet() de <a class="el" href="class_scene.html">Scene</a> permet d'initaliser le maillage (de type Mesh) de l'objet pour effectuer son affichage par le viewer.</li>
+<li>La methode Simulation() de la classe <a class="el" href="class_scene.html">Scene</a> permet d'effectuer les differents calculs d'un pas de temps de simulation pour l'ensemble des elements attaches a la <a class="el" href="class_scene.html">Scene</a>.</li>
+</ul>
+</li>
+<li>A noter que, la gravite et la viscosite du milieu sont definies dans la <a class="el" href="class_scene.html">Scene</a>, c'est-a-dire que leurs proprietes sont identiques pour chacun des objets simules. Leurs caracteristiques sont fournies au lancement de l'application via le fichier de donnees.</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="sec-visu2"></a>
+Representation d'un objet de la scene pour le visualiser</h1>
+<p>Les principales structures de donnees relatives a un objet pour effectuer sont affichages sont les suivantes :</p>
+<ul>
+<li>La structure _VIndices contient les indices des sommets du maillage decrivant l'objet visualise. Sa taille est definie par _VISize qui vaut trois fois le nombre de facettes puisqu'une facette est definie par trois sommets. Les trois premiers elements de cette structure correspondent aux indices des trois sommets definissant la premiere facette de l'objet. L'ordre des indices des sommets au sein de cette structure suit ainsi l'ordre des facettes contenues dans la structure _vectFaceSet.</li>
+<li>La structure _vectNormals contient les coordonnees des normales des sommets de l'objet visualise. Les premier elements de _vectNormals correspond aux coordonnees en x, y, z de la normale du premier sommet, et ainsi de suite. Les donnees de cette structure sont calculees a partir des coordonnees de positions des sommets (voir <a class="el" href="index.html#subsection-visu32">Lissage des normales des sommets</a>).</li>
+<li>La structure _vectTexture contient les coordonnees de texture des sommets de l'objet visualise.</li>
+<li>La structure P qui contient les coordonnees 3D des sommets de l objet.</li>
+<li>Ces differentes structures sont ainsi employees pour creer l objet m_objetSimule de type Mesh (dans la methode initMeshObjet()).</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="sec3"></a>
+Representation d'un objet de la scene pour l'animer</h1>
+<p>Les objets simules sont de type <a class="el" href="class_objet_simule.html">ObjetSimule</a> comportant les elements suivants :</p>
+<ul>
+<li>Le tableau P (de type std::vector&lt;Vector&gt;) qui contient les coordonnees de positions des particules constituant l'objet a simuler. Ce tableau est initialise a partir du fichier de donnees correspondant rattache a l'objet. Pour permettre l acces aux coordonnees de position pour l affichage des objets, le tableau P est en fait mis dans la structure <a class="el" href="class_noeud.html">Noeud</a>. Le premier element de P (de type Vector) correspond ainsi a la coordonnee en x, y et z de la position du premier sommet de l'objet visualise. L'element suivant correspond a la coordonnee en x, y, et z du deuxieme sommet, et ainsi de suite. Les valeurs de ce tableau sont mises a jour a chaque pas de temps de la simulation.</li>
+<li>Le tableau V (de type std::vector&lt;Vector&gt;) qui contient les coordonnees de vitesses des particules constituant l'objet a simuler. Les elements de ce tableau sont initialises a zero au depart et sont mises a jour a chaque pas de temps de la simulation.</li>
+<li>Le tableau A (de type std::vector&lt;Vector&gt;) qui contient les coordonnees des accelerations des particules constituant l'objet a simuler. Les elements de ce tableau sont initialises a zero au depart et sont mis a jour a chaque pas de temps de la simulation.</li>
+<li>Le tableau Force (de type std::vector&lt;Vector&gt;) qui contient les coordonnees des forces appliquees aux particules constituant l'objet a simuler. Les elements de ce tableau sont initialises a zero au depart et sont mis a jour a chaque pas de temps de la simulation.</li>
+<li>Le tableau M (de type std::vector&lt;float&gt;) qui contient les mases des particules constituant l'objet a simuler. Ce tableau est initialise a partir du fichier de donnees correspondant rattache a l'objet.</li>
+</ul>
+<p>Pour un objet simule de type <a class="el" href="class_objet_simule_m_s_s.html">ObjetSimuleMSS</a> qui est ainsi represente par un systeme masses-ressorts, nous utilisons un element appele _SytemeMasseRessort de type <a class="el" href="class_m_s_s.html">MSS</a>.</p>
+<ul>
+<li>La structure <a class="el" href="class_m_s_s.html" title="Classe de base d un systeme masses-ressorts. Il est constitue d un ensemble de particules et de resso...">MSS</a> permet ainsi de definir le systeme masses-ressorts de l'objet. La structure <a class="el" href="class_m_s_s.html">MSS</a> contient ainsi une liste de <a class="el" href="class_ressort.html">Ressort</a>, une liste de <a class="el" href="class_particule.html">Particule</a>.<ul>
+<li>la structure <a class="el" href="class_particule.html">Particule</a> (definition physique d'une particule) est constituee d'un identifiant, d'une position, et de la liste des ressorts auxquels la particule est reliee.</li>
+<li>la structure <a class="el" href="class_spring.html">Spring</a> permet de stocker les caracteristiques physiques des ressorts (raideur, amortissement, longueur au repos et viscosite)</li>
+<li>la structure <a class="el" href="class_ressort.html">Ressort</a> permet de donner la definition geometrique d'un ressort. Elle est constituee d'un identifiant, d'un <a class="el" href="class_spring.html">Spring</a> contenant ces proprietes, et des deux indices des particules auxquelles le ressort est relie.</li>
+<li>A noter que pour le moment, tous les ressorts d'un meme objet ont les memes caracteristiques physiques definies par l'utilisateur. Il sera possible d'ajouter ulterieurement ces caracteristiques pour chacun des ressorts constituant le systeme masses-ressorts en les mettant par exemple dans un fichier de donnees. Ce systeme masses-ressorts est cree lors de l'initialisation de l'objet simule, notamment a partir du fichier des facettes fourni en parametre de l'objet a simuler. Ce maillage est utilise pour connaitre les interactions qui existent entre les particules d'un objet donne.</li>
+</ul>
+</li>
+</ul>
+<p>La class <a class="el" href="class_solveur_expl.html">SolveurExpl</a> permet de gerer un solveur suivant la methode d'Euler semi-implicite.</p><ul>
+<li>La methode CalculAccel_ForceGravite rajoute la force de gravite a l ensemble des forces calculees, puis calcul l acceleration des particules.</li>
+<li>La methode Solve calcul les vitesses et positions des particules avec le schema d integration numerique d Euler semi-implicite.</li>
+</ul>
+<p>La class <a class="el" href="class_solveur_impl.html">SolveurImpl</a> permet de gerer un solveur suivant la methode d'Euler implicite.</p><ul>
+<li>La methode CalculAccel_ForceGravite rajoute la force de gravite a l ensemble des forces calculees, puis calcul l acceleration des particules.</li>
+<li>La methode Solve calcul les vitesses et positions des particules avec le schema d integration numerique d Euler implicite.</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="sec4"></a>
+Algorithmes de la simulation</h1>
+<h2><a class="anchor" id="subsec41"></a>
+Boucle de la simulation</h2>
+<p>A chaque pas de temps, les calculs suivants sont effectues pour un objet donne :</p><ul>
+<li><a class="el" href="index.html#subsec42">Calcul des forces</a> appliquees aux particules constituant l'objet</li>
+<li><a class="el" href="index.html#subsec43">Calcul des accelerations</a> des particules</li>
+<li><a class="el" href="index.html#subsec44">Calcul des vitesses et des positions</a> des particules</li>
+</ul>
+<h2><a class="anchor" id="subsec42"></a>
+Calcul des forces</h2>
+<p>Les forces f appliquees aux particules constituant un objet sont dues a la gravite du milieu ainsi qu'aux interactions des autres particules constituant l'objet. La force appliquee a la ieme particule du systeme peut ainsi etre formulee par :</p>
+<p><picture><source srcset="form_0_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \vec{f}_i(t) = \sum_{j\mid(i,j)\in   E}  \left[\vec{f}^{e}_{i,j}(t) + \vec{f}^{v}_{i,j}(t) \right] \: +  m_i \vec{g} +\:  \vec{f}_{externe}(t),$" src="form_0.png"/></picture></p>
+<p>avec :</p>
+<p><picture><source srcset="form_1_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$
+  \left\{
+  \begin{array}{lcl}
+  \vec{f}^{e}_{i,j}(t) &amp;=&amp; k_{ij} \left(\|x_i(t) - x_j(t)\| - l_{ij}\right)\;  \vec{u}_{ij}(t),\\
+  \vec{f}^{v}_{i,j}(t) &amp;=&amp; {\nu}_{ij}  \left(v_i(t) -  v_j(t)\right) \; \vec{u}_{ij}(t) \; \vec{u}_{ij}(t),
+  \end{array}
+  \right.
+  $" src="form_1.png"/></picture></p>
+<p>ou :</p><ul>
+<li>E represente l'ensemble des aretes du systeme a particules,</li>
+<li><picture><source srcset="form_2_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$k_{ij}$" src="form_2.png"/></picture> est la constante de raideur des ressorts,</li>
+<li><picture><source srcset="form_3_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="${\nu}_{ij}$" src="form_3.png"/></picture> est la constante d'amortissement des ressorts,</li>
+<li><picture><source srcset="form_4_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$l_{ij}$" src="form_4.png"/></picture> est la longueur du ressort au repos reliant la particule i et la particule j,</li>
+<li><picture><source srcset="form_5_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\vec{g}$" src="form_5.png"/></picture> represente le vecteur de la gravite,</li>
+<li>et <picture><source srcset="form_6_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\vec{u}_{ij}(t)$" src="form_6.png"/></picture> est un vecteur unitaire defini par <picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \vec{u}_{ij}(t) = \frac{x_i(t) - x_j(t)}{\|x_i(t) - x_j(t)\|} $" src="form_7.png"/></picture>.</li>
+</ul>
+<p>Pour des raisons d'implementation, les forces dues a la gravite sont en fait ajoutees dans le calcul des accelerations.</p>
+<h2><a class="anchor" id="subsec43"></a>
+Calcul des accelerations</h2>
+<p>Les accelerations des particules sont obtenues a partir de leurs forces en utilisant la loi fondamentale de la dynamique, avec <picture><source srcset="form_8_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ a_i = \frac{f_i}{m_i} $" src="form_8.png"/></picture> ou <picture><source srcset="form_9_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$a_i$" src="form_9.png"/></picture> est l'acceleration de la particule i, <picture><source srcset="form_10_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$f_i $" src="form_10.png"/></picture> la force appliquee sur cette particule, et <picture><source srcset="form_11_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$m_i $" src="form_11.png"/></picture> sa masse.</p>
+<p>C'est au sein de cette methode que le vecteur des forces est reinitialise.</p>
+<h2><a class="anchor" id="subsec44"></a>
+Calcul des vitesses et des positions</h2>
+<p>Les vitesses et les positions des particules sont obtenues en utilisant la methode explicite de Leap-Frog Verlet :</p>
+<p><picture><source srcset="form_12_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$
+  \begin{array}{lr}
+  \left\{
+  \begin{array}{ccl}
+  v(t_0)   &amp;=&amp;   v_0\\
+  v(\frac{h}{2}) &amp;=&amp; v_0 + \frac{h}{2}v'_0\\
+  x(t_0) &amp;=&amp; x_0
+  \end{array}
+  \right., 
+  &amp; 
+  \left\{
+  \begin{array}{ccl}
+  v(t+\frac{h}{2}) &amp;=&amp; v(t-\frac{h}{2}) + hv'(t) \\ 
+  x(t+h) &amp;=&amp; x(t) + hv(t+\frac{h}{2}) 
+  \end{array}
+  \right..
+  \end{array}
+  $" src="form_12.png"/></picture></p>
+<hr  />
+<h1><a class="anchor" id="sec-visu3"></a>
+Calculs effectues pour la visualisation</h1>
+<h2><a class="anchor" id="subsection-visu31"></a>
+Calcul de la normale d'une face</h2>
+<p>Considerons une facette definie par les sommets A, B et C. La normale de cette facette est alors definie par <picture><source srcset="form_13_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\vec{n} = \frac{\vec{AB} \wedge \vec{AC}}{\| \vec{AB} \wedge \vec{AC} \|}$" src="form_13.png"/></picture> avec  <picture><source srcset="form_14_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\vec{AB} = \left(
+  \begin{array}{c}
+  x_B - x_A\\
+  y_B - y_A \\
+  z_B - z_A
+  \end{array}
+  \right) $" src="form_14.png"/></picture> et <picture><source srcset="form_15_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \|\vec{u}\| = \sqrt{x^2 + y^2 + z^2} $" src="form_15.png"/></picture> ou x, y et z sont les coordonnees de <picture><source srcset="form_16_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \vec{u} $" src="form_16.png"/></picture>.</p>
+<h2><a class="anchor" id="subsection-visu32"></a>
+Lissage des normales des sommets</h2>
+<p>Afin d'eviter d'avoir des "pics" entre les facettes, il faut lisser les normales des sommets. Voici les etapes de ce lissage :</p><ul>
+<li>La premiere etape consiste a initialiser a zero la normale en chacun des sommets du maillage.</li>
+<li>Ensuite pour chacune des facettes, nous allons</li>
+<li>calculer sa normale (voir <a class="el" href="index.html#subsection-visu31">Calcul de la normale d'une face</a>),</li>
+<li>et ajouter cette valeur a la normale de chacun des sommets constituant la facette.</li>
+<li>Enfin la normale calculee pour chaque sommet est normalisee en la divisant par sa norme. </li>
+</ul>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

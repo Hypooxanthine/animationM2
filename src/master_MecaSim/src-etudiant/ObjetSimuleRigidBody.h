@@ -89,6 +89,7 @@ public:
     // ri(t) : position dans le repere monde
     // ri(t) = R(t) r0i + x(t)
     std::vector<Vector> _ROi;
+    std::vector<Vector> _Ri;
     
     /// Matrice de rotation R(t)
     Matrix _Rotation;

@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Animation 3D (master_meca_sim):  Fichier source de src-etudiant/Matrix.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Animation 3D (master_meca_sim)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6a0b4331353b5e5054bef558e30b5fe0.html">src-etudiant</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Matrix.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_matrix_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Matrix.h : Definition de la structure matrix (matrice 3x3)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Copyright (C) 2016 Florence Zara, LIRIS</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *               florence.zara@liris.univ-lyon1.fr</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *               http://liris.cnrs.fr/florence.zara/</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * This program is free software; you can redistribute it and/or modify</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * it under the terms of the GNU Lesser General Public License as published</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * by the Free Software Foundation; either version 2.1 of the License, or</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * (at your option) any later version.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * along with this program; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#ifndef MATRIX_H</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define MATRIX_H</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;vec.h&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_matrix.html">   43</a></span><span class="keyword">class </span><a class="code hl_class" href="class_matrix.html">Matrix</a></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> <a class="code hl_function" href="class_matrix.html#a41339f752bc8094db90a1f127d6d8716">NullMatrix</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> <a class="code hl_function" href="class_matrix.html#a894b0cf9c0bd7b29d1116988a56d79e4">UnitMatrix</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> <a class="code hl_function" href="class_matrix.html#ac7ac398d41937f59af5ef2743bb3d3d9">AngleVectorToMatrix</a>(Vector axe, <span class="keywordtype">float</span> angle_degres);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_matrix.html#aaa1a8e15c24997969c01c6a8bc4b8462">   57</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_matrix.html#aaa1a8e15c24997969c01c6a8bc4b8462">m_Values</a>[9];</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; <a class="code hl_function" href="class_matrix.html#a45e4814b752129bed1f1316632f8543a">operator= </a>(<span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrix);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; operator*= (<span class="keywordtype">float</span> factor);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; operator*= (<span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrix);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; operator+= (<span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrix);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; operator-= (<span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrix);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="comment">// Acces a une valeur de la matrice : par l indice</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">float</span> &amp; operator() (<span class="keywordtype">unsigned</span> index);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// Acces a une valeur de la matrice : par indices ligne et colonne</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">float</span> &amp; operator() (<span class="keywordtype">unsigned</span> row, <span class="keywordtype">unsigned</span> column);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">float</span> operator() (<span class="keywordtype">unsigned</span> index) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">float</span> operator() (<span class="keywordtype">unsigned</span> row, <span class="keywordtype">unsigned</span> column) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    Vector <a class="code hl_function" href="class_matrix.html#ae5371a9f1f7c7d4d236a001a74a042fa">GetLine</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    Vector <a class="code hl_function" href="class_matrix.html#a9e3a3cf2098b4f9bf04c4a7e800a72b1">GetColumn</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_matrix.html#a66cd8cba36ae11e19a389124ffc82c29">Determinant</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_matrix.html#ac06388fe7254b2f14a667a05f38d19f1">Inverse</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_class" href="class_matrix.html">Matrix</a> <a class="code hl_function" href="class_matrix.html#accafb64d0f1a883315f3e4b084aefd6f">InverseConst</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_matrix.html#a350d12361c31ec650e667e8120da7274">Transpose</a>();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_class" href="class_matrix.html">Matrix</a> <a class="code hl_function" href="class_matrix.html#a8240391058b682d16c1acd8097dc79b2">TransposeConst</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>};</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><a class="code hl_class" href="class_matrix.html">Matrix</a> operator* (<span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrix, <span class="keywordtype">float</span> factor);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><a class="code hl_class" href="class_matrix.html">Matrix</a> operator* (<span class="keywordtype">float</span> factor, <span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrix);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><a class="code hl_class" href="class_matrix.html">Matrix</a> operator* (<span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrixA, <span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrixB);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>Vector operator* (<span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrix, <span class="keyword">const</span> Vector &amp; coord);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><a class="code hl_class" href="class_matrix.html">Matrix</a> operator+ (<span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrixA, <span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrixB);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>Vector operator* (<span class="keyword">const</span> Vector &amp; coord, <span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrix);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><a class="code hl_class" href="class_matrix.html">Matrix</a> operator- (<span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrixA, <span class="keyword">const</span> <a class="code hl_class" href="class_matrix.html">Matrix</a> &amp; matrixB);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>std::ostream&amp; operator&lt;&lt;(std::ostream &amp;flux, <a class="code hl_class" href="class_matrix.html">Matrix</a> <span class="keyword">const</span> &amp;m);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><a class="code hl_class" href="class_matrix.html">Matrix</a> MultiplyTransposedAndOriginal(<span class="keyword">const</span> Vector &amp; coord);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><a class="code hl_class" href="class_matrix.html">Matrix</a> <a class="code hl_function" href="_matrix_8h.html#af186da21204346a3ba8d67a734ece8b6">StarMatrix</a>(<span class="keyword">const</span> Vector &amp; vector);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_matrix_8h_html_af186da21204346a3ba8d67a734ece8b6"><div class="ttname"><a href="_matrix_8h.html#af186da21204346a3ba8d67a734ece8b6">StarMatrix</a></div><div class="ttdeci">Matrix StarMatrix(const Vector &amp;vector)</div><div class="ttdoc">Retourne le matrice (vecteur *).</div><div class="ttdef"><b>Definition</b> Matrix.cpp:446</div></div>
+<div class="ttc" id="aclass_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdoc">Structure de donnees relative a une matrice 3x3.</div><div class="ttdef"><b>Definition</b> Matrix.h:44</div></div>
+<div class="ttc" id="aclass_matrix_html_a350d12361c31ec650e667e8120da7274"><div class="ttname"><a href="class_matrix.html#a350d12361c31ec650e667e8120da7274">Matrix::Transpose</a></div><div class="ttdeci">void Transpose()</div><div class="ttdoc">Calcul de la matrice transposee.</div><div class="ttdef"><b>Definition</b> Matrix.cpp:312</div></div>
+<div class="ttc" id="aclass_matrix_html_a41339f752bc8094db90a1f127d6d8716"><div class="ttname"><a href="class_matrix.html#a41339f752bc8094db90a1f127d6d8716">Matrix::NullMatrix</a></div><div class="ttdeci">static Matrix NullMatrix()</div><div class="ttdoc">Creation matrice nulle.</div><div class="ttdef"><b>Definition</b> Matrix.cpp:45</div></div>
+<div class="ttc" id="aclass_matrix_html_a45e4814b752129bed1f1316632f8543a"><div class="ttname"><a href="class_matrix.html#a45e4814b752129bed1f1316632f8543a">Matrix::operator=</a></div><div class="ttdeci">Matrix &amp; operator=(const Matrix &amp;matrix)</div><div class="ttdoc">Surcharge des operateurs.</div><div class="ttdef"><b>Definition</b> Matrix.cpp:122</div></div>
+<div class="ttc" id="aclass_matrix_html_a66cd8cba36ae11e19a389124ffc82c29"><div class="ttname"><a href="class_matrix.html#a66cd8cba36ae11e19a389124ffc82c29">Matrix::Determinant</a></div><div class="ttdeci">float Determinant() const</div><div class="ttdoc">Renvoie le determinant de la matrice.</div><div class="ttdef"><b>Definition</b> Matrix.cpp:258</div></div>
+<div class="ttc" id="aclass_matrix_html_a8240391058b682d16c1acd8097dc79b2"><div class="ttname"><a href="class_matrix.html#a8240391058b682d16c1acd8097dc79b2">Matrix::TransposeConst</a></div><div class="ttdeci">Matrix TransposeConst() const</div><div class="ttdoc">Renvoi la matrice transposee.</div><div class="ttdef"><b>Definition</b> Matrix.cpp:325</div></div>
+<div class="ttc" id="aclass_matrix_html_a894b0cf9c0bd7b29d1116988a56d79e4"><div class="ttname"><a href="class_matrix.html#a894b0cf9c0bd7b29d1116988a56d79e4">Matrix::UnitMatrix</a></div><div class="ttdeci">static Matrix UnitMatrix()</div><div class="ttdoc">Creation matrice unitaire.</div><div class="ttdef"><b>Definition</b> Matrix.cpp:61</div></div>
+<div class="ttc" id="aclass_matrix_html_a9e3a3cf2098b4f9bf04c4a7e800a72b1"><div class="ttname"><a href="class_matrix.html#a9e3a3cf2098b4f9bf04c4a7e800a72b1">Matrix::GetColumn</a></div><div class="ttdeci">Vector GetColumn(unsigned int index) const</div><div class="ttdoc">Renvoie le vecteur colonne de la matrice selon l indice de colonne donne.</div><div class="ttdef"><b>Definition</b> Matrix.cpp:246</div></div>
+<div class="ttc" id="aclass_matrix_html_aaa1a8e15c24997969c01c6a8bc4b8462"><div class="ttname"><a href="class_matrix.html#aaa1a8e15c24997969c01c6a8bc4b8462">Matrix::m_Values</a></div><div class="ttdeci">float m_Values[9]</div><div class="ttdoc">Valeurs de la matrice 3 x 3.</div><div class="ttdef"><b>Definition</b> Matrix.h:57</div></div>
+<div class="ttc" id="aclass_matrix_html_ac06388fe7254b2f14a667a05f38d19f1"><div class="ttname"><a href="class_matrix.html#ac06388fe7254b2f14a667a05f38d19f1">Matrix::Inverse</a></div><div class="ttdeci">void Inverse()</div><div class="ttdoc">Calcul de la matrice inverse.</div><div class="ttdef"><b>Definition</b> Matrix.cpp:272</div></div>
+<div class="ttc" id="aclass_matrix_html_ac7ac398d41937f59af5ef2743bb3d3d9"><div class="ttname"><a href="class_matrix.html#ac7ac398d41937f59af5ef2743bb3d3d9">Matrix::AngleVectorToMatrix</a></div><div class="ttdeci">static Matrix AngleVectorToMatrix(Vector axe, float angle_degres)</div><div class="ttdoc">Matrice de rotation.</div><div class="ttdef"><b>Definition</b> Matrix.cpp:76</div></div>
+<div class="ttc" id="aclass_matrix_html_accafb64d0f1a883315f3e4b084aefd6f"><div class="ttname"><a href="class_matrix.html#accafb64d0f1a883315f3e4b084aefd6f">Matrix::InverseConst</a></div><div class="ttdeci">Matrix InverseConst() const</div><div class="ttdoc">Renvoi la matrice inverse.</div><div class="ttdef"><b>Definition</b> Matrix.cpp:301</div></div>
+<div class="ttc" id="aclass_matrix_html_ae5371a9f1f7c7d4d236a001a74a042fa"><div class="ttname"><a href="class_matrix.html#ae5371a9f1f7c7d4d236a001a74a042fa">Matrix::GetLine</a></div><div class="ttdeci">Vector GetLine(unsigned int index) const</div><div class="ttdoc">Renvoie le vecteur ligne de la matrice selon l indice de ligne donne.</div><div class="ttdef"><b>Definition</b> Matrix.cpp:236</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

@@ -8,7 +8,7 @@ viscosite=0.995;
 
 #viscosite=0.1;
 
-objet1=sph;
+objet1=rigid;
 
 #objet1=mss;
 

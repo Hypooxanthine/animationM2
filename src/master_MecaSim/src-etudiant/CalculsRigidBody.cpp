@@ -30,6 +30,7 @@
 #include <math.h>
 #include <vector>
 #include <iostream>
+#include <numeric>
 
 #include "vec.h"
 #include "ObjetSimule.h"
@@ -46,8 +47,16 @@ using namespace std;
  */
 void ObjetSimuleRigidBody::CalculMasse()
 {
-    
-    
+    _Mass = std::accumulate(M.begin(), M.end(), 0.0);
+
+    _BaryCentre = Vector();
+
+    for (int i = 0; i < _Nb_Sommets; ++i)
+    {
+        _BaryCentre = _BaryCentre + M[i] * P[i];
+    }
+
+    _BaryCentre = _BaryCentre / _Mass;
 }
 
 
@@ -57,7 +66,37 @@ void ObjetSimuleRigidBody::CalculMasse()
  */
 void ObjetSimuleRigidBody::CalculIBody()
 {
-    
+    _ROi.resize(_Nb_Sommets);
+
+    for (unsigned int i = 0; i < _Nb_Sommets; i++)
+    {
+        // Calculer la position de la particule i dans l'objet
+        _ROi[i] = P[i] - _Position;
+    }
+
+    Matrix t;
+
+    for (unsigned int i = 0; i < _Nb_Sommets; i++)
+    {
+        float xi = _ROi[i].x;
+        float yi = _ROi[i].y;
+        float zi = _ROi[i].z;
+
+        // Tenseur d'inertie
+        t.m_Values[0] = xi * xi;
+        t.m_Values[1] = xi * yi;
+        t.m_Values[2] = xi * zi;
+        t.m_Values[3] = yi * xi;
+        t.m_Values[4] = yi * yi;
+        t.m_Values[5] = yi * zi;
+        t.m_Values[6] = zi * xi;
+        t.m_Values[7] = zi * yi;
+        t.m_Values[8] = zi * zi;
+
+        _Ibody += ((xi * xi + yi * yi + zi * zi) * Matrix::UnitMatrix() - t);
+        _IbodyInv = _Ibody.InverseConst();
+    }
+
 }
 
 
@@ -66,8 +105,13 @@ void ObjetSimuleRigidBody::CalculIBody()
  */
 void ObjetSimuleRigidBody::CalculStateX()
 {
+    _Position = _Position - _BaryCentre;
+
+    // Calcul de l'inverse du tenseur d inertie
+    _InertieTenseurInv = _Rotation * _IbodyInv * _Rotation.TransposeConst();
     
-    
+    // Calcul de la vitesse angulaire
+    _VitesseAngulaire = _InertieTenseurInv * _MomentCinetique;
 }
 
 
@@ -77,7 +121,22 @@ void ObjetSimuleRigidBody::CalculStateX()
  */
 void ObjetSimuleRigidBody::CalculDeriveeStateX(Vector gravite)
 {
+    // v(t) = P(t) / mass
+    _Vitesse = _QuantiteMouvement / _Mass;
+
+    // R'(t)
+    _RotationDerivee = StarMatrix(_VitesseAngulaire) * _Rotation;
     
+    // P'(t) = F(t)
+    // gravite = normalize(Vector(1.f, 1.f, 2.f) - _Position) * 9.81f;
+    _Force = _Mass * gravite;
+    
+    // L'(t) = moment total de la force (torque)
+    _Torque = Vector();
+    for (size_t i = 0; i < _Ri.size(); ++i)
+    {
+        _Torque = _Torque + cross(_ROi[i] - _Position, _Force); 
+    }
 }
 
 
@@ -86,8 +145,26 @@ void ObjetSimuleRigidBody::CalculDeriveeStateX(Vector gravite)
  */
 void ObjetSimuleRigidBody::Solve(float visco)
 {
-  
+    // x(t+dt) - position
+    _Position = _Position + _Vitesse * visco * _delta_t;
     
+    // R(t+dt) - rotation
+    _Rotation = _Rotation + _RotationDerivee * _delta_t;
+    
+    // L(t+dt) - moment cinetique
+    _MomentCinetique = _MomentCinetique + _Torque * _delta_t;
+    
+    // P(t+dt) - quantite mouvement    
+    _QuantiteMouvement = _QuantiteMouvement + _Force * _delta_t;
+
+    _VitesseAngulaire = _InertieTenseurInv * _MomentCinetique;
+
+    // ri(t)
+    for (size_t i = 0; i < P.size(); ++i)
+    {
+        _Ri[i] = _Rotation * _ROi[i] + _Position;
+    }
+
 }//void
 
 
@@ -97,8 +174,5 @@ void ObjetSimuleRigidBody::Solve(float visco)
  */
 void ObjetSimuleRigidBody::Collision()
 {
-
-   
-    
 }// void
 

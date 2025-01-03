@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Animation 3D (master_meca_sim):  Fichier source de src-etudiant/Scene.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Animation 3D (master_meca_sim)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6a0b4331353b5e5054bef558e30b5fe0.html">src-etudiant</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Scene.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_scene_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Scene.h : Scene 3D</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Copyright (C) 2016 Florence Zara, LIRIS</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *               florence.zara@liris.univ-lyon1.fr</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *               http://liris.cnrs.fr/florence.zara/</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * This program is free software; you can redistribute it and/or modify</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * it under the terms of the GNU Lesser General Public License as published</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * by the Free Software Foundation; either version 2.1 of the License, or</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * (at your option) any later version.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * GNU Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * along with this program; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef SCENE_H</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define SCENE_H</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;vec.h&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="_noeuds_8h.html">Noeuds.h</a>&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="_scene_8h.html#abcdbcef1083bbd88eaddd13fa866fa96">   45</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="_scene_8h.html#abcdbcef1083bbd88eaddd13fa866fa96">NB_OBJ_MAX</a> = 100;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="_scene_8h.html#a642fd4cb4979deadec20f67e554b0d12">   50</a></span><span class="keyword">typedef</span> std::list&lt;Noeud*&gt; <a class="code hl_typedef" href="_scene_8h.html#a642fd4cb4979deadec20f67e554b0d12">ListeNoeuds</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="};">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_scene.html">   56</a></span><span class="keyword">class </span><a class="code hl_class" href="class_scene.html">Scene</a> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_class" href="class_scene.html">Scene</a>(std::string Fichier_Param, <span class="keywordtype">int</span> NbObj);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene.html#a4331cae5ae585fc1b9b6b3c5ce780008">attache</a>(<a class="code hl_class" href="class_noeud.html">Noeud</a> *n);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene.html#a5b8e36a207a5cc9a3275417fa817464a">getName</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene.html#ad1bffae798b08bd3d306a8addcd9cafb">Param</a>(std::string Fichier_Param);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene.html#a5d7686fe5cfc5377edc9f44c37ce0d1d">setGravite</a>(Vector g);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene.html#a559890f9e6179e1a3d5b55437d8747aa">setVisco</a>(<span class="keywordtype">float</span> visco);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene.html#a0901a9e9b49876bdb7488f29b034ec6a">initObjetSimule</a>();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene.html#a8d45942fcbaac3693b8dd9d38ef99a7a">initMeshObjet</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene.html#a8637264d6a48952cb2bd26231e1b323e">Simulation</a>(<span class="keywordtype">int</span> Tps);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene.html#af5d06fcd4ec1b00ed7234bfb7f3f10a6">Collision</a>();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_scene.html#ae145338876e7b8eae417c941272d4b7e">Interaction</a>(Vector MousePos);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_scene.html#aa0a5be58e2ee2d1fdafc5fb46b5e661e">   94</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_scene.html#aa0a5be58e2ee2d1fdafc5fb46b5e661e">~Scene</a>(){};</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_scene.html#a2a80dd5d727a2ae32398093ed0826039">  100</a></span>    <a class="code hl_typedef" href="_scene_8h.html#a642fd4cb4979deadec20f67e554b0d12">ListeNoeuds</a> <a class="code hl_variable" href="class_scene.html#a2a80dd5d727a2ae32398093ed0826039">_enfants</a>;  </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="class_scene.html#ae54dfab89623c4df381f7a8ff932861d">  103</a></span>    Vector <a class="code hl_variable" href="class_scene.html#ae54dfab89623c4df381f7a8ff932861d">_g</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_scene.html#a86e6fbeb5bce17a2fac49d4c901b690f">  106</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_scene.html#a86e6fbeb5bce17a2fac49d4c901b690f">_visco</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="class_scene.html#a7db0e5030f16307bb2ac2004ec993dd7">  109</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_scene.html#a7db0e5030f16307bb2ac2004ec993dd7">_nb_iter</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="class_scene.html#a106ae5fb5ed12cfce5fa2ca82c0c3b99">  112</a></span>    std::string <a class="code hl_variable" href="class_scene.html#a106ae5fb5ed12cfce5fa2ca82c0c3b99">_type_objet</a>[<a class="code hl_variable" href="_scene_8h.html#abcdbcef1083bbd88eaddd13fa866fa96">NB_OBJ_MAX</a>];</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_scene.html#a03212dc592f602a882ad64ab3982ea13">  115</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_scene.html#a03212dc592f602a882ad64ab3982ea13">_NbObj</a>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>};</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_noeuds_8h_html"><div class="ttname"><a href="_noeuds_8h.html">Noeuds.h</a></div><div class="ttdoc">Definition des classes de noeuds du graphe de scene.</div></div>
+<div class="ttc" id="a_scene_8h_html_a642fd4cb4979deadec20f67e554b0d12"><div class="ttname"><a href="_scene_8h.html#a642fd4cb4979deadec20f67e554b0d12">ListeNoeuds</a></div><div class="ttdeci">std::list&lt; Noeud * &gt; ListeNoeuds</div><div class="ttdoc">Type liste de noeuds.</div><div class="ttdef"><b>Definition</b> Scene.h:50</div></div>
+<div class="ttc" id="a_scene_8h_html_abcdbcef1083bbd88eaddd13fa866fa96"><div class="ttname"><a href="_scene_8h.html#abcdbcef1083bbd88eaddd13fa866fa96">NB_OBJ_MAX</a></div><div class="ttdeci">const int NB_OBJ_MAX</div><div class="ttdoc">Nombre d'objets maximum presents dans la scene.</div><div class="ttdef"><b>Definition</b> Scene.h:45</div></div>
+<div class="ttc" id="aclass_noeud_html"><div class="ttname"><a href="class_noeud.html">Noeud</a></div><div class="ttdoc">Classe de base pour tous les elements de la scene.</div><div class="ttdef"><b>Definition</b> Noeuds.h:50</div></div>
+<div class="ttc" id="aclass_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdoc">Scene 3D (visualisation et animation).</div><div class="ttdef"><b>Definition</b> Scene.h:57</div></div>
+<div class="ttc" id="aclass_scene_html_a03212dc592f602a882ad64ab3982ea13"><div class="ttname"><a href="class_scene.html#a03212dc592f602a882ad64ab3982ea13">Scene::_NbObj</a></div><div class="ttdeci">int _NbObj</div><div class="ttdoc">Nombre d objets presents dans la scene.</div><div class="ttdef"><b>Definition</b> Scene.h:115</div></div>
+<div class="ttc" id="aclass_scene_html_a0901a9e9b49876bdb7488f29b034ec6a"><div class="ttname"><a href="class_scene.html#a0901a9e9b49876bdb7488f29b034ec6a">Scene::initObjetSimule</a></div><div class="ttdeci">void initObjetSimule()</div><div class="ttdef"><b>Definition</b> Scene.cpp:89</div></div>
+<div class="ttc" id="aclass_scene_html_a106ae5fb5ed12cfce5fa2ca82c0c3b99"><div class="ttname"><a href="class_scene.html#a106ae5fb5ed12cfce5fa2ca82c0c3b99">Scene::_type_objet</a></div><div class="ttdeci">std::string _type_objet[NB_OBJ_MAX]</div><div class="ttdoc">Type d objet simule.</div><div class="ttdef"><b>Definition</b> Scene.h:112</div></div>
+<div class="ttc" id="aclass_scene_html_a2a80dd5d727a2ae32398093ed0826039"><div class="ttname"><a href="class_scene.html#a2a80dd5d727a2ae32398093ed0826039">Scene::_enfants</a></div><div class="ttdeci">ListeNoeuds _enfants</div><div class="ttdoc">Liste de pointeurs sur les enfants</div><div class="ttdef"><b>Definition</b> Scene.h:100</div></div>
+<div class="ttc" id="aclass_scene_html_a4331cae5ae585fc1b9b6b3c5ce780008"><div class="ttname"><a href="class_scene.html#a4331cae5ae585fc1b9b6b3c5ce780008">Scene::attache</a></div><div class="ttdeci">void attache(Noeud *n)</div><div class="ttdef"><b>Definition</b> Scene.cpp:63</div></div>
+<div class="ttc" id="aclass_scene_html_a559890f9e6179e1a3d5b55437d8747aa"><div class="ttname"><a href="class_scene.html#a559890f9e6179e1a3d5b55437d8747aa">Scene::setVisco</a></div><div class="ttdeci">void setVisco(float visco)</div><div class="ttdef"><b>Definition</b> Scene.cpp:207</div></div>
+<div class="ttc" id="aclass_scene_html_a5b8e36a207a5cc9a3275417fa817464a"><div class="ttname"><a href="class_scene.html#a5b8e36a207a5cc9a3275417fa817464a">Scene::getName</a></div><div class="ttdeci">void getName()</div><div class="ttdef"><b>Definition</b> Scene.cpp:72</div></div>
+<div class="ttc" id="aclass_scene_html_a5d7686fe5cfc5377edc9f44c37ce0d1d"><div class="ttname"><a href="class_scene.html#a5d7686fe5cfc5377edc9f44c37ce0d1d">Scene::setGravite</a></div><div class="ttdeci">void setGravite(Vector g)</div><div class="ttdef"><b>Definition</b> Scene.cpp:196</div></div>
+<div class="ttc" id="aclass_scene_html_a7db0e5030f16307bb2ac2004ec993dd7"><div class="ttname"><a href="class_scene.html#a7db0e5030f16307bb2ac2004ec993dd7">Scene::_nb_iter</a></div><div class="ttdeci">int _nb_iter</div><div class="ttdoc">Nombre d iterations de la boucle de simulation.</div><div class="ttdef"><b>Definition</b> Scene.h:109</div></div>
+<div class="ttc" id="aclass_scene_html_a8637264d6a48952cb2bd26231e1b323e"><div class="ttname"><a href="class_scene.html#a8637264d6a48952cb2bd26231e1b323e">Scene::Simulation</a></div><div class="ttdeci">void Simulation(int Tps)</div><div class="ttdef"><b>Definition</b> Scene.cpp:147</div></div>
+<div class="ttc" id="aclass_scene_html_a86e6fbeb5bce17a2fac49d4c901b690f"><div class="ttname"><a href="class_scene.html#a86e6fbeb5bce17a2fac49d4c901b690f">Scene::_visco</a></div><div class="ttdeci">float _visco</div><div class="ttdoc">Viscosite du milieu.</div><div class="ttdef"><b>Definition</b> Scene.h:106</div></div>
+<div class="ttc" id="aclass_scene_html_a8d45942fcbaac3693b8dd9d38ef99a7a"><div class="ttname"><a href="class_scene.html#a8d45942fcbaac3693b8dd9d38ef99a7a">Scene::initMeshObjet</a></div><div class="ttdeci">void initMeshObjet()</div><div class="ttdef"><b>Definition</b> Scene.cpp:117</div></div>
+<div class="ttc" id="aclass_scene_html_aa0a5be58e2ee2d1fdafc5fb46b5e661e"><div class="ttname"><a href="class_scene.html#aa0a5be58e2ee2d1fdafc5fb46b5e661e">Scene::~Scene</a></div><div class="ttdeci">virtual ~Scene()</div><div class="ttdef"><b>Definition</b> Scene.h:94</div></div>
+<div class="ttc" id="aclass_scene_html_ad1bffae798b08bd3d306a8addcd9cafb"><div class="ttname"><a href="class_scene.html#ad1bffae798b08bd3d306a8addcd9cafb">Scene::Param</a></div><div class="ttdeci">void Param(std::string Fichier_Param)</div><div class="ttdef"><b>Definition</b> Param.cpp:59</div></div>
+<div class="ttc" id="aclass_scene_html_ae145338876e7b8eae417c941272d4b7e"><div class="ttname"><a href="class_scene.html#ae145338876e7b8eae417c941272d4b7e">Scene::Interaction</a></div><div class="ttdeci">void Interaction(Vector MousePos)</div><div class="ttdef"><b>Definition</b> Scene.cpp:179</div></div>
+<div class="ttc" id="aclass_scene_html_ae54dfab89623c4df381f7a8ff932861d"><div class="ttname"><a href="class_scene.html#ae54dfab89623c4df381f7a8ff932861d">Scene::_g</a></div><div class="ttdeci">Vector _g</div><div class="ttdoc">Gravite de la scene.</div><div class="ttdef"><b>Definition</b> Scene.h:103</div></div>
+<div class="ttc" id="aclass_scene_html_af5d06fcd4ec1b00ed7234bfb7f3f10a6"><div class="ttname"><a href="class_scene.html#af5d06fcd4ec1b00ed7234bfb7f3f10a6">Scene::Collision</a></div><div class="ttdeci">void Collision()</div><div class="ttdef"><b>Definition</b> Scene.cpp:163</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

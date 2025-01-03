@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Animation 3D (master_meca_sim):  Fichier source de src-etudiant/ObjetSimuleMSS.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Animation 3D (master_meca_sim)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6a0b4331353b5e5054bef558e30b5fe0.html">src-etudiant</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">ObjetSimuleMSS.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_objet_simule_m_s_s_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef OBJET_SIMULE_MSS_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define OBJET_SIMULE_MSS_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// Fichiers de gkit2light</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;vec.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;mesh.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// Fichiers de master_meca_sim</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="_m_s_s_8h.html">MSS.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="_noeuds_8h.html">Noeuds.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="_properties_8h.html">Properties.h</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;SolveurExpl.h&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;SolveurImpl.h&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="class_objet_simule_m_s_s.html">ObjetSimuleMSS</a>: <span class="keyword">public</span> <a class="code hl_class" href="class_objet_simule.html">ObjetSimule</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="class_objet_simule_m_s_s.html">ObjetSimuleMSS</a>(std::string fich_param);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule_m_s_s.html#a119f17f2b19f0bfdefb6b2ed6d16de4b">Param_mss</a>(std::string fich_param);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule_m_s_s.html#a4435c3fd01e400c3c5facec3364f8a47">initObjetSimule</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule_m_s_s.html#a2901d40cae92fc172c5f5f5293da5438">initMeshObjet</a>();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule_m_s_s.html#a6331fc14b3b439e3172c647069e2919e">CalculForceSpring</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule_m_s_s.html#a5b34a813ffc0857ec60b3cb469a44bf3">Simulation</a>(Vector gravite, <span class="keywordtype">float</span> viscosite, <span class="keywordtype">int</span> Tps);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule_m_s_s.html#ab101b5fb664ef6349471cd5c8b2d532f">Collision</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule_m_s_s.html#abdc40d2a5d798789434da2a939701275">updateVertex</a>();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule_m_s_s.html#af3596876c2ed6ebc327844ede8566809">setNormals</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_objet_simule_m_s_s.html#ad4cf6cf15b7eda8362b0f2508b8e98b5">NormaleFace</a>(Vector &amp;normale, <span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b, <span class="keywordtype">int</span> c);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html#a29d43c09cd60461d72bef4ace0043a22">   68</a></span>    <span class="keyword">inline</span> Point <a class="code hl_function" href="class_objet_simule_m_s_s.html#a29d43c09cd60461d72bef4ace0043a22">GetTissuSize</a>() {<span class="keywordflow">return</span> <a class="code hl_variable" href="class_objet_simule_m_s_s.html#a1cf0fa574ecf3282615c17cddecd7922">_Size</a>;}</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>   </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html#a3452545be1cabd1a81942153525bf758">   72</a></span>    std::string <a class="code hl_variable" href="class_objet_simule_m_s_s.html#a3452545be1cabd1a81942153525bf758">_Fich_Texture</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html#afbab372ca4034131928aa5dbf451b4ea">   75</a></span>    std::string <a class="code hl_variable" href="class_objet_simule_m_s_s.html#afbab372ca4034131928aa5dbf451b4ea">_Fich_FaceSet</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html#a1cf0fa574ecf3282615c17cddecd7922">   78</a></span>    Point <a class="code hl_variable" href="class_objet_simule_m_s_s.html#a1cf0fa574ecf3282615c17cddecd7922">_Size</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html#a88cf7814fa649022fbe9e92f8574abc2">   81</a></span>    std::vector&lt;Texture&gt; <a class="code hl_variable" href="class_objet_simule_m_s_s.html#a88cf7814fa649022fbe9e92f8574abc2">_vectTexture</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html#a5d0a190367b33e62c5016178816b7f39">   84</a></span>    std::vector&lt;Vector&gt; <a class="code hl_variable" href="class_objet_simule_m_s_s.html#a5d0a190367b33e62c5016178816b7f39">_vectNormals</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html#a261b2c445eb6e4d2cfa07063d9966b38">   87</a></span>    std::vector&lt;int&gt; <a class="code hl_variable" href="class_objet_simule_m_s_s.html#a261b2c445eb6e4d2cfa07063d9966b38">_VIndices</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html#a902e54c1c5dff66980969adb5d08f819">   90</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_objet_simule_m_s_s.html#a902e54c1c5dff66980969adb5d08f819">_VISize</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html#a6006e96d9138374ef3333fba1a504bc7">   93</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_objet_simule_m_s_s.html#a6006e96d9138374ef3333fba1a504bc7">_NFacets</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html#abe3a2999536af43e23df4f6fd56c418b">   96</a></span>    <a class="code hl_class" href="class_m_s_s.html">MSS</a> * <a class="code hl_variable" href="class_objet_simule_m_s_s.html#abe3a2999536af43e23df4f6fd56c418b">_SystemeMasseRessort</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html#ae1c8232dea5c5e6377a7e27849f45047">   99</a></span>    std::string <a class="code hl_variable" href="class_objet_simule_m_s_s.html#ae1c8232dea5c5e6377a7e27849f45047">_Integration</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html#a1b7f160dcfc1fef2017fea0aedaf6bd7">  102</a></span>    <a class="code hl_class" href="class_solveur_expl.html">SolveurExpl</a> *<a class="code hl_variable" href="class_objet_simule_m_s_s.html#a1b7f160dcfc1fef2017fea0aedaf6bd7">_SolveurExpl</a>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="class_objet_simule_m_s_s.html#a07879291aef098c5aa470e1be4c6b6fd">  105</a></span>    <a class="code hl_class" href="class_solveur_impl.html">SolveurImpl</a> *<a class="code hl_variable" href="class_objet_simule_m_s_s.html#a07879291aef098c5aa470e1be4c6b6fd">_SolveurImpl</a>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>};</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_m_s_s_8h_html"><div class="ttname"><a href="_m_s_s_8h.html">MSS.h</a></div><div class="ttdoc">Structures de donnes relatives a la construction du maillage triangulaire relatif au systeme masse-re...</div></div>
+<div class="ttc" id="a_noeuds_8h_html"><div class="ttname"><a href="_noeuds_8h.html">Noeuds.h</a></div><div class="ttdoc">Definition des classes de noeuds du graphe de scene.</div></div>
+<div class="ttc" id="a_properties_8h_html"><div class="ttname"><a href="_properties_8h.html">Properties.h</a></div><div class="ttdoc">Permet la lecture des donnees mises dans le fichier d execution.</div></div>
+<div class="ttc" id="aclass_m_s_s_html"><div class="ttname"><a href="class_m_s_s.html">MSS</a></div><div class="ttdoc">Classe de base d un systeme masses-ressorts. Il est constitue d un ensemble de particules et de resso...</div><div class="ttdef"><b>Definition</b> MSS.h:274</div></div>
+<div class="ttc" id="aclass_objet_simule_html"><div class="ttname"><a href="class_objet_simule.html">ObjetSimule</a></div><div class="ttdoc">Structure de donnees de base des objets simules.</div><div class="ttdef"><b>Definition</b> ObjetSimule.h:66</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html"><div class="ttname"><a href="class_objet_simule_m_s_s.html">ObjetSimuleMSS</a></div><div class="ttdoc">Structure de donnees pour un systeme masses-ressorts.</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:32</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a07879291aef098c5aa470e1be4c6b6fd"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a07879291aef098c5aa470e1be4c6b6fd">ObjetSimuleMSS::_SolveurImpl</a></div><div class="ttdeci">SolveurImpl * _SolveurImpl</div><div class="ttdoc">SolveurImpl : schema d integration implicite.</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:105</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a119f17f2b19f0bfdefb6b2ed6d16de4b"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a119f17f2b19f0bfdefb6b2ed6d16de4b">ObjetSimuleMSS::Param_mss</a></div><div class="ttdeci">void Param_mss(std::string fich_param)</div><div class="ttdef"><b>Definition</b> Param.cpp:187</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a1b7f160dcfc1fef2017fea0aedaf6bd7"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a1b7f160dcfc1fef2017fea0aedaf6bd7">ObjetSimuleMSS::_SolveurExpl</a></div><div class="ttdeci">SolveurExpl * _SolveurExpl</div><div class="ttdoc">SolveurExpl : schema d integration semi-implicite.</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:102</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a1cf0fa574ecf3282615c17cddecd7922"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a1cf0fa574ecf3282615c17cddecd7922">ObjetSimuleMSS::_Size</a></div><div class="ttdeci">Point _Size</div><div class="ttdoc">Longueur du tissu dans chacune des directions x,y,z.</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:78</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a261b2c445eb6e4d2cfa07063d9966b38"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a261b2c445eb6e4d2cfa07063d9966b38">ObjetSimuleMSS::_VIndices</a></div><div class="ttdeci">std::vector&lt; int &gt; _VIndices</div><div class="ttdoc">Tableau des indices des sommets.</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:87</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a2901d40cae92fc172c5f5f5293da5438"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a2901d40cae92fc172c5f5f5293da5438">ObjetSimuleMSS::initMeshObjet</a></div><div class="ttdeci">void initMeshObjet()</div><div class="ttdoc">Creation du maillage (pour l affichage) de l objet simule de type MSS. Methode invoquee par le graphe...</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.cpp:395</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a29d43c09cd60461d72bef4ace0043a22"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a29d43c09cd60461d72bef4ace0043a22">ObjetSimuleMSS::GetTissuSize</a></div><div class="ttdeci">Point GetTissuSize()</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:68</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a3452545be1cabd1a81942153525bf758"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a3452545be1cabd1a81942153525bf758">ObjetSimuleMSS::_Fich_Texture</a></div><div class="ttdeci">std::string _Fich_Texture</div><div class="ttdoc">Fichier de donnees contenant les textures.</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:72</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a4435c3fd01e400c3c5facec3364f8a47"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a4435c3fd01e400c3c5facec3364f8a47">ObjetSimuleMSS::initObjetSimule</a></div><div class="ttdeci">void initObjetSimule()</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.cpp:73</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a5b34a813ffc0857ec60b3cb469a44bf3"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a5b34a813ffc0857ec60b3cb469a44bf3">ObjetSimuleMSS::Simulation</a></div><div class="ttdeci">void Simulation(Vector gravite, float viscosite, int Tps)</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.cpp:422</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a5d0a190367b33e62c5016178816b7f39"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a5d0a190367b33e62c5016178816b7f39">ObjetSimuleMSS::_vectNormals</a></div><div class="ttdeci">std::vector&lt; Vector &gt; _vectNormals</div><div class="ttdoc">Tableau des normales des sommets.</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:84</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a6006e96d9138374ef3333fba1a504bc7"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a6006e96d9138374ef3333fba1a504bc7">ObjetSimuleMSS::_NFacets</a></div><div class="ttdeci">unsigned int _NFacets</div><div class="ttdoc">Nombre de facettes.</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:93</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a6331fc14b3b439e3172c647069e2919e"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a6331fc14b3b439e3172c647069e2919e">ObjetSimuleMSS::CalculForceSpring</a></div><div class="ttdeci">void CalculForceSpring()</div><div class="ttdef"><b>Definition</b> CalculsMSS.cpp:48</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a88cf7814fa649022fbe9e92f8574abc2"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a88cf7814fa649022fbe9e92f8574abc2">ObjetSimuleMSS::_vectTexture</a></div><div class="ttdeci">std::vector&lt; Texture &gt; _vectTexture</div><div class="ttdoc">Tableau des textures.</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:81</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_a902e54c1c5dff66980969adb5d08f819"><div class="ttname"><a href="class_objet_simule_m_s_s.html#a902e54c1c5dff66980969adb5d08f819">ObjetSimuleMSS::_VISize</a></div><div class="ttdeci">unsigned int _VISize</div><div class="ttdoc">Taille du tableau des indices des sommets.</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:90</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_ab101b5fb664ef6349471cd5c8b2d532f"><div class="ttname"><a href="class_objet_simule_m_s_s.html#ab101b5fb664ef6349471cd5c8b2d532f">ObjetSimuleMSS::Collision</a></div><div class="ttdeci">void Collision()</div><div class="ttdef"><b>Definition</b> CalculsMSS.cpp:61</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_abdc40d2a5d798789434da2a939701275"><div class="ttname"><a href="class_objet_simule_m_s_s.html#abdc40d2a5d798789434da2a939701275">ObjetSimuleMSS::updateVertex</a></div><div class="ttdeci">void updateVertex()</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.cpp:411</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_abe3a2999536af43e23df4f6fd56c418b"><div class="ttname"><a href="class_objet_simule_m_s_s.html#abe3a2999536af43e23df4f6fd56c418b">ObjetSimuleMSS::_SystemeMasseRessort</a></div><div class="ttdeci">MSS * _SystemeMasseRessort</div><div class="ttdoc">Declaration du systeme masse-ressort (maillage point de vue de la simulation)</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:96</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_ad4cf6cf15b7eda8362b0f2508b8e98b5"><div class="ttname"><a href="class_objet_simule_m_s_s.html#ad4cf6cf15b7eda8362b0f2508b8e98b5">ObjetSimuleMSS::NormaleFace</a></div><div class="ttdeci">void NormaleFace(Vector &amp;normale, int a, int b, int c)</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.cpp:315</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_ae1c8232dea5c5e6377a7e27849f45047"><div class="ttname"><a href="class_objet_simule_m_s_s.html#ae1c8232dea5c5e6377a7e27849f45047">ObjetSimuleMSS::_Integration</a></div><div class="ttdeci">std::string _Integration</div><div class="ttdoc">Choix du schema d integration.</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:99</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_af3596876c2ed6ebc327844ede8566809"><div class="ttname"><a href="class_objet_simule_m_s_s.html#af3596876c2ed6ebc327844ede8566809">ObjetSimuleMSS::setNormals</a></div><div class="ttdeci">void setNormals()</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.cpp:335</div></div>
+<div class="ttc" id="aclass_objet_simule_m_s_s_html_afbab372ca4034131928aa5dbf451b4ea"><div class="ttname"><a href="class_objet_simule_m_s_s.html#afbab372ca4034131928aa5dbf451b4ea">ObjetSimuleMSS::_Fich_FaceSet</a></div><div class="ttdeci">std::string _Fich_FaceSet</div><div class="ttdoc">Fichier de donnees contenant les faceSet.</div><div class="ttdef"><b>Definition</b> ObjetSimuleMSS.h:75</div></div>
+<div class="ttc" id="aclass_solveur_expl_html"><div class="ttname"><a href="class_solveur_expl.html">SolveurExpl</a></div><div class="ttdef"><b>Definition</b> SolveurExpl.h:35</div></div>
+<div class="ttc" id="aclass_solveur_impl_html"><div class="ttname"><a href="class_solveur_impl.html">SolveurImpl</a></div><div class="ttdef"><b>Definition</b> SolveurImpl.h:33</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
