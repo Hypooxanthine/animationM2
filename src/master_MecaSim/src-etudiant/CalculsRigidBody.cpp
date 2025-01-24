@@ -129,7 +129,7 @@ void ObjetSimuleRigidBody::CalculDeriveeStateX(Vector gravite)
     
     // P'(t) = F(t)
     // gravite = normalize(Vector(1.f, 1.f, 2.f) - _Position) * 9.81f;
-    _Force = _Mass * gravite;
+    _Force = _Mass * gravite * 0.001f;
     
     // L'(t) = moment total de la force (torque)
     _Torque = Vector();
@@ -146,7 +146,7 @@ void ObjetSimuleRigidBody::CalculDeriveeStateX(Vector gravite)
 void ObjetSimuleRigidBody::Solve(float visco)
 {
     // x(t+dt) - position
-    _Position = _Position + _Vitesse * visco * _delta_t;
+    _Position = _Position + _Vitesse * _delta_t;
     
     // R(t+dt) - rotation
     _Rotation = _Rotation + _RotationDerivee * _delta_t;
@@ -174,5 +174,13 @@ void ObjetSimuleRigidBody::Solve(float visco)
  */
 void ObjetSimuleRigidBody::Collision()
 {
+    for (size_t i = 0; i < _Ri.size(); ++i)
+    {
+        if (_Ri[i].y < -3.f)
+        {
+            _Position.y += 6.f;
+            return;
+        }
+    }
 }// void
 

@@ -10,3 +10,5 @@ extern/
 *.depend
 obj
 Makefile*
+*.tmp
+~$apport.docx
